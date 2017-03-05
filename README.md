@@ -1,5 +1,5 @@
 # valdi
-Input validation with extendable valid patterns definitions.
+Input validation with extendable valid patterns definitions - for ES6 version check [valdi-es6](https://github.com/martinswiderski/valdi-es6).
 
 ### Version
 
