@@ -1,7 +1,7 @@
 {
   "name": "valdi",
   "version": "0.0.2",
-  "description": "Input validation with extendable valid patterns definitions (pre-ES6 version).",
+  "description": "Input validation with extendable valid patterns definitions.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Placeholder: no code contribution yet\" && exit 0"
