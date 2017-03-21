@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-<testsuite name="ValidatorExpression exposes version number" errors="0" tests="1" failures="0" time="0" timestamp="2017-03-21T13:57:34">
+<testsuite name="ValidatorExpression exposes version number" errors="0" tests="1" failures="0" time="0" timestamp="2017-03-21T14:13:45">
   <testcase classname="ValidatorExpression exposes version number" name="Version 0.0.1" time="0"></testcase>
 </testsuite>
 </testsuites>

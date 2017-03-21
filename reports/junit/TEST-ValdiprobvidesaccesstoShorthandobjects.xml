@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-<testsuite name="Valdi probvides access to Shorthand objects" errors="0" tests="3" failures="0" time="0" timestamp="2017-03-21T13:57:34">
+<testsuite name="Valdi probvides access to Shorthand objects" errors="0" tests="3" failures="0" time="0.001" timestamp="2017-03-21T14:13:45">
   <testcase classname="Valdi probvides access to Shorthand objects" name="via full name" time="0"></testcase>
   <testcase classname="Valdi probvides access to Shorthand objects" name="via short name" time="0"></testcase>
   <testcase classname="Valdi probvides access to Shorthand objects" name="via short name" time="0"></testcase>

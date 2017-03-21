@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-<testsuite name="Basic checks" errors="0" tests="31" failures="0" time="0.023" timestamp="2017-03-21T13:57:34">
+<testsuite name="Basic checks" errors="0" tests="31" failures="0" time="0.024" timestamp="2017-03-21T14:13:45">
   <testcase classname="Basic checks" name="Method InputValidator.isNumber" time="0"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator._toNumber" time="0"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator.isNumberAsString" time="0"></testcase>
-  <testcase classname="Basic checks" name="Method InputValidator.isInteger" time="0.001"></testcase>
+  <testcase classname="Basic checks" name="Method InputValidator.isInteger" time="0"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator._toInteger" time="0"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator.isIntegerAsString" time="0"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator.isReal" time="0"></testcase>
@@ -14,23 +14,23 @@
   <testcase classname="Basic checks" name="Method InputValidator.isNull" time="0"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator.isValidLocale" time="0"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator.isString" time="0"></testcase>
-  <testcase classname="Basic checks" name="Method InputValidator.isNumberAsString" time="0.001"></testcase>
+  <testcase classname="Basic checks" name="Method InputValidator.isNumberAsString" time="0"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator.isEmail" time="0.01"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator.isEmptyString" time="0"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator.isGreaterThan" time="0"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator.isLessThan" time="0.002"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator.isEqual" time="0"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator.isNotEqual" time="0"></testcase>
-  <testcase classname="Basic checks" name="Method InputValidator.isArrayAsString" time="0.002"></testcase>
+  <testcase classname="Basic checks" name="Method InputValidator.isArrayAsString" time="0.003"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator._toArray" time="0.001"></testcase>
-  <testcase classname="Basic checks" name="Method InputValidator.inList" time="0.001"></testcase>
-  <testcase classname="Basic checks" name="Method InputValidator.notInList" time="0.001"></testcase>
+  <testcase classname="Basic checks" name="Method InputValidator.inList" time="0"></testcase>
+  <testcase classname="Basic checks" name="Method InputValidator.notInList" time="0"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator.stringContains" time="0"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator._toString" time="0"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator.isBase64" time="0"></testcase>
-  <testcase classname="Basic checks" name="Method InputValidator.isUrl" time="0.001"></testcase>
-  <testcase classname="Basic checks" name="Method InputValidator.isIpv4" time="0.001"></testcase>
-  <testcase classname="Basic checks" name="Method InputValidator.isIpv6" time="0.001"></testcase>
+  <testcase classname="Basic checks" name="Method InputValidator.isUrl" time="0.002"></testcase>
+  <testcase classname="Basic checks" name="Method InputValidator.isIpv4" time="0"></testcase>
+  <testcase classname="Basic checks" name="Method InputValidator.isIpv6" time="0.002"></testcase>
   <testcase classname="Basic checks" name="Method InputValidator.isJsonString" time="0"></testcase>
 </testsuite>
 </testsuites>

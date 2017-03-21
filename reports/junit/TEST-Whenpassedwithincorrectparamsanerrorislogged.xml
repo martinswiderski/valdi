@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-<testsuite name="When passed with incorrect params an error is logged" errors="0" tests="4" failures="0" time="0" timestamp="2017-03-21T13:57:34">
+<testsuite name="When passed with incorrect params an error is logged" errors="0" tests="4" failures="0" time="0.001" timestamp="2017-03-21T14:13:45">
   <testcase classname="When passed with incorrect params an error is logged" name="for operator bad string" time="0"></testcase>
   <testcase classname="When passed with incorrect params an error is logged" name="for operator non string" time="0"></testcase>
   <testcase classname="When passed with incorrect params an error is logged" name="for assertion non bool or object" time="0"></testcase>
-  <testcase classname="When passed with incorrect params an error is logged" name="for evaluate on unset operator" time="0"></testcase>
+  <testcase classname="When passed with incorrect params an error is logged" name="for evaluate on unset operator" time="0.001"></testcase>
 </testsuite>
 </testsuites>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-<testsuite name="ValidatorExpression creates children with factory method" errors="0" tests="2" failures="0" time="0.001" timestamp="2017-03-21T13:57:34">
+<testsuite name="ValidatorExpression creates children with factory method" errors="0" tests="2" failures="0" time="0" timestamp="2017-03-21T14:13:45">
   <testcase classname="ValidatorExpression creates children with factory method" name="They all share parent ID" time="0"></testcase>
   <testcase classname="ValidatorExpression creates children with factory method" name="Parent ID and individual ID are MD5" time="0"></testcase>
 </testsuite>
