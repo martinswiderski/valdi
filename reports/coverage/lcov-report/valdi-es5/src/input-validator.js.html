@@ -1,0 +1,929 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for valdi-es5/src/input-validator.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">valdi-es5/src/</a> input-validator.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.86% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>137/140</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.66% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>101/109</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>38/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.81% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>134/137</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">154×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">154×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">170×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">30×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">126×</span>
+<span class="cline-any cline-yes">102×</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">108×</span>
+<span class="cline-any cline-yes">106×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">245×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">83×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">57×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">931×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">931×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">85×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">85×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+var Config = require('./config'),
+    Inspector = require('./inspector'),
+    StringTool = require('./string-tool'),
+    Validator = require('validator'),
+    ipv4 = require('ip-address').Address4,
+    ipv6 = require('ip-address').Address6,
+    csv = require('csv-string'),
+    supportedLocales = {
+        locale: {
+            en: true,
+            de: true,
+            ar: true,
+            fr: true,
+            ja: true
+        },
+        pattern: {
+            en: /^([a-zA-Z0-9 \t'-_-]+)$/,
+            de: /^([a-zA-Z0-9 \t'-_-\u00E4\u00F6\u00FC\u00C4\u00D6\u00DC\u00df]+)$/,
+            fr: /^([a-zA-Z0-9 \t'-_-\u00c9\u00c0\u00c8\u00d9\u00c2\u00ca\u00ce\u00d4\u00db\u00c7\u00cb\u00cf\u00dc\u00e9\u00e0\u00e8\u00f9\u00e2\u00ea\u00ee\u00f4\u00fb\u00e7\u00eb\u00ef\u00fc]+)$/,
+            ar: /^([a-zA-Z0-9 \t'-_-\u0600-\u06FF]+)$/,
+            ja: /[一-龠0-9 \t'-_-]+|[ぁ-ゔ0-9 \t'-_-]+|[ァ-ヴー0-9 \t'-_-]+|[a-zA-Z0-9]+|[ａ-ｚＡ-Ｚ０-９ \t]+[々〆〤0-9 \t'-_-]+/
+        }
+    };
+&nbsp;
+&nbsp;
+function InputValidator () {
+&nbsp;
+    this.init = function () {
+        // all steps wiring the object here
+        return this;
+    };
+&nbsp;
+    this.version = function() {
+        return Config.version;
+    };
+&nbsp;
+    this.isNumber = function(val, matchStrings) {
+        if (typeof matchStrings !== 'undefined'
+            &amp;&amp; matchStrings === true &amp;&amp; iv().isNumberAsString(val)) {
+            val = iv()._toNumber(val);
+        }
+        return typeof val === 'number';
+    };
+    
+    this.isInteger = function(val, matchStrings) {
+        if (typeof matchStrings !== 'undefined'
+            &amp;&amp; matchStrings === true &amp;&amp; iv().isIntegerAsString(val)) {
+            val = iv()._toInteger(val);
+        }
+        return iv().isNumber(val) &amp;&amp; '' + parseInt(val, 10) === ('' + val);
+    };
+    
+    this.isReal = function(val, matchStrings) {
+        if (typeof matchStrings !== 'undefined'
+            &amp;&amp; matchStrings === true &amp;&amp; iv().isRealAsString(val)) {
+            val = iv()._toReal(val);
+        }
+        return iv().isNumber(val) &amp;&amp; '' + parseInt(val, 10) !== ('' + val);
+    };
+&nbsp;
+    this.isBool = function(val) {
+        return val === true || val === false;
+    };
+    
+    this.isNull = function(val) {
+        return null === val;
+    };
+    
+    this.isValidLocale = function(val) {
+        return !supportedLocales.locale[val] ? false : true;
+    };
+    
+    this.isString = function(val) {
+        return typeof val === 'string';
+    };
+&nbsp;
+    this.isAlphanumeric = function(val, locale) {
+        if (!iv().isString(val) || !iv().isValidLocale(locale)) {
+            return false;
+        } else {
+            return iv().isRegexMatch(val, supportedLocales.pattern[locale]);
+        }
+    };
+&nbsp;
+    this.isRegexMatch = function(val, pattern) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!iv().isString(val)) {
+<span class="cstat-no" title="statement not covered" >            return false; </span>// bad input
+        } else {
+            var m = val.match(pattern);
+            return (m === null || !m[0]) ? false : m[0] === val;
+        }
+    };
+&nbsp;
+    this.isArrayAsString = function (string, emptyInvalid) {
+        var arr = iv()._toArray(string, emptyInvalid);
+        return (arr !== false) ? true : false;
+    };
+&nbsp;
+    this._toArray = function(string, emptyInvalid) {
+        var arr = '';
+        if (!iv().isBool(emptyInvalid)) {
+            emptyInvalid = true;
+        }
+        if (!iv().isString(string)) {
+            return false;
+        }
+        if (iv().isJsonString(string)) {
+            arr = JSON.parse(string);
+        } else {
+            arr = csv.parse(string);
+            arr = (!arr[0]) ? <span class="branch-0 cbranch-no" title="branch not covered" >[] </span>: arr[0];
+        }
+        if (emptyInvalid === true) {
+            return (arr.length === 0) ? <span class="branch-0 cbranch-no" title="branch not covered" >false </span>: arr;
+        } else {
+            return arr;
+        }
+    };
+    
+    this.isNumberAsString = function(val) {
+        return iv().isRealAsString(val)
+            || iv().isIntegerAsString(val);
+    };
+&nbsp;
+    this._toNumber = function(val) {
+        if (iv().isIntegerAsString(val)) {
+            return iv()._toInteger(val);
+        } else if (iv().isRealAsString(val)) {
+            return iv()._toReal(val);
+        } else {
+            return val;
+        }
+    };
+&nbsp;
+    this._toInteger = function(val) {
+        if (iv().isIntegerAsString(val)) {
+            return parseInt(val);
+        } else {
+            return val;
+        }
+    };
+&nbsp;
+    this._toReal = function(val) {
+        if (iv().isRealAsString(val)) {
+            return parseFloat(val);
+        } else {
+            return val;
+        }
+    };
+&nbsp;
+    this.isIntegerAsString = function(val) {
+        return ''+val === '' + parseInt(val)*1;
+    };
+&nbsp;
+    this.isRealAsString = function(val) {
+        return ''+val === '' + parseFloat(val)*1;
+    };
+&nbsp;
+    this.isEmail = function(val) {
+        return iv().isString(val) &amp;&amp; Validator.isEmail(val);
+    };
+    
+    this.isEmptyString = function(val) {
+        return iv().isString(val) &amp;&amp; 0 === val.length;
+    };
+    
+    this.isGreaterThan = function(val, mark) {
+        if (ins().name(val) === 'boolean'
+            || ins().name(mark) === 'boolean') {
+            return false;
+        }
+        val  = (iv().isNumber(val) || iv().isNumberAsString(val)) ? iv()._toNumber(val) : val;
+        mark = (iv().isNumber(mark) || iv().isNumberAsString(mark)) ? iv()._toNumber(mark) : <span class="branch-1 cbranch-no" title="branch not covered" >mark;</span>
+        //console.log('isGreaterThan');
+        //console.log('val');
+        //console.log(typeof val);
+        //console.log(val);
+        //console.log('merk');
+        //console.log(typeof mark);
+        //console.log(mark);
+        //console.log('expression');
+        //console.log(val &gt; mark);
+        return (val &gt; mark);
+    };
+    
+    this.isLessThan = function(val, mark) {
+        if (ins().name(val) === 'boolean'
+            || ins().name(mark) === 'boolean') {
+            return false;
+        }
+        val  = (iv().isNumber(val) || iv().isNumberAsString(val)) ? iv()._toNumber(val) : val;
+        mark = (iv().isNumber(mark) || iv().isNumberAsString(mark)) ? iv()._toNumber(mark) : <span class="branch-1 cbranch-no" title="branch not covered" >mark;</span>
+        return (mark &gt; val);
+    };
+    
+    this.isEqual = function(val, mark) {
+        if (val === mark) {
+            return true;
+        } else if (iv()._toNumber(val) === iv()._toNumber(mark)) {
+            return true;
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (iv()._toString(val) === iv()._toString(mark)) {
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+            return false;
+        }
+    };
+    
+    this.isNotEqual = function(val, mark) {
+        return !iv().isEqual(val, mark);
+    };
+&nbsp;
+    this.inList = function(val, list) {
+        if (iv().isString(list)) {
+            list = iv()._toArray(list);
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (list === false) {
+<span class="cstat-no" title="statement not covered" >                list = [];</span>
+            }
+        }
+        var lu = iv()._arrayToLookup(list);
+        return !lu[val] ? false : true;
+    };
+&nbsp;
+    this._arrayToLookup = function(arr) {
+        var lu = {};
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (arr.push) for (var k in arr)  lu[arr[k]] = true;
+        return lu;
+    };
+&nbsp;
+    this.notInList = function(val, list) {
+        return !iv().inList(val, list);
+    };
+&nbsp;
+    this.stringContains = function(val, string) {
+        if (!iv().isString(val) || !iv().isString(string)) return false;
+        return 0 &lt; StringTool.countOccurrence(val, string);
+    };
+&nbsp;
+    this._toString = function (input) {
+        return (!iv().isString(input)) ? (new String(input)).valueOf() : input;
+    };
+&nbsp;
+    this.isBase64 = function(val) {
+        return Validator.isBase64(
+            iv()._toString(val)
+        );
+    };
+&nbsp;
+    this.isUrl = function(val) {
+        return Validator.isURL(
+            iv()._toString(val)
+        );
+    };
+&nbsp;
+    this.isIpv4 = function(val) {
+        var addr = new ipv4(iv()._toString(val));
+        return addr.isValid();
+    };
+&nbsp;
+    this.isIpv6 = function(val) {
+        var addr = new ipv6(iv()._toString(val));
+        return addr.isValid();
+    };
+&nbsp;
+    this.isJsonString = function(val) {
+        return Validator.isJSON(
+            iv()._toString(val)
+        );
+    };    
+}
+&nbsp;
+var _ins = false,
+    _iv = false;
+function iv() {
+    if (_iv === false) {
+        _iv = (new InputValidator()).init();
+    }
+    return _iv;
+}
+&nbsp;
+function ins() {
+    if (_ins === false) {
+        _ins = Inspector;
+    }
+    return _ins;
+}
+&nbsp;
+module.exports = (new InputValidator()).init();
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Mar 21 2017 13:57:37 GMT+0000 (GMT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

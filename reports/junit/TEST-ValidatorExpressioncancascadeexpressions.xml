@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="ValidatorExpression can cascade expressions" errors="0" tests="2" failures="0" time="0" timestamp="2017-03-21T13:57:34">
+  <testcase classname="ValidatorExpression can cascade expressions" name="AND with both TRUE" time="0"></testcase>
+  <testcase classname="ValidatorExpression can cascade expressions" name="OR with FALSE|FALSE" time="0"></testcase>
+</testsuite>
+</testsuites>

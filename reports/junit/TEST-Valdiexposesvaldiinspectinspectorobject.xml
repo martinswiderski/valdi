@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="Valdi exposes valdi.inspect - inspector object" errors="0" tests="2" failures="0" time="0.001" timestamp="2017-03-21T13:57:34">
+  <testcase classname="Valdi exposes valdi.inspect - inspector object" name="Valdi.inspect" time="0"></testcase>
+  <testcase classname="Valdi exposes valdi.inspect - inspector object" name="Valdi.inspect on new object and its property" time="0.001"></testcase>
+</testsuite>
+</testsuites>

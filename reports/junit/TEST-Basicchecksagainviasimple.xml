@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="Basic checks again via simple" errors="0" tests="17" failures="0" time="0.016" timestamp="2017-03-21T13:57:34">
+  <testcase classname="Basic checks again via simple" name="Methods chain simple.number().value()" time="0.002"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain simple.numberAsString().value()" time="0"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain simple.integer().value()" time="0.001"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain ...integerAsString()" time="0"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain ...real()" time="0"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain ...realAsString()" time="0.001"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain ...bool()" time="0"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain ..null()" time="0.001"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain ..validLocale()" time="0.002"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain ..string()" time="0.001"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain ...email()" time="0"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain ...emptyString()" time="0.001"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain ...number().greaterThan()" time="0.001"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain ....number().lessThan()" time="0.001"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain ...equal()" time="0"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain ...notEqual()" time="0.001"></testcase>
+  <testcase classname="Basic checks again via simple" name="Methods chain ..arrayAsString()" time="0.002"></testcase>
+</testsuite>
+</testsuites>

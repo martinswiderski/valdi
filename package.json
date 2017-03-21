@@ -1,10 +1,16 @@
 {
   "name": "valdi",
-  "version": "0.0.2",
-  "description": "Input validation with extendable valid patterns definitions.",
+  "version": "0.0.35",
+  "description": "Input validation with extendable valid patterns definitions (pre-ES6 version).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Placeholder: no code contribution yet\" && exit 0"
+    "github-release": "./github-release",
+    "test": "alias jasmine-node=./node_modules/.bin/jasmine-node; jasmine-node --junitreport tests/specs/; mv reports/*.xml reports/junit/; git checkout tests/props/*.*",
+    "check-eslint": "alias eslint=./node_modules/.bin/eslint; OUT='./reports/eslint/eslint.txt'; eslint src/*.js > $OUT; eslint ./index.js >> $OUT; eslint tests/specs/*.js >> $OUT; echo \"DONE!\"",
+    "check-coverage": "rm -fr reports/coverage/; alias istanbul=./node_modules/.bin/istanbul; alias jasmine-node=./node_modules/.bin/jasmine-node; istanbul cover --include-all-sources jasmine-node tests/specs/; rm -fr reports/coverage/; mv coverage reports/; git checkout tests/props/*.*",
+    "tests": "npm test; npm run check-eslint; npm run check-coverage",
+    "rebuild": "rm -fr node_modules; npm install",
+    "all": "npm run rebuild; npm run tests"
   },
   "repository": {
     "type": "git",
@@ -29,5 +35,21 @@
   "bugs": {
     "url": "https://github.com/martinswiderski/valdi/issues"
   },
-  "homepage": "https://github.com/martinswiderski/valdi#readme"
+  "homepage": "https://github.com/martinswiderski/valdi#readme",
+  "dependencies": {
+    "csv-string": "^2.3.2",
+    "date-time": "^1.1.0",
+    "eslint": "^3.17.1",
+    "fs": "0.0.1-security",
+    "ip-address": "^5.8.6",
+    "istanbul": "^0.4.5",
+    "jasmine-node": "^1.14.5",
+    "md5": "^2.2.1",
+    "path": "^0.12.7",
+    "sha1": "^1.1.1",
+    "shortid": "^2.2.8",
+    "validator": "^7.0.0",
+    "xregexp": "^3.1.1",
+    "yamljs": "^0.2.8"
+  }
 }

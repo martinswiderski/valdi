@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="Rule" errors="0" tests="1" failures="0" time="0" timestamp="2017-03-21T13:32:45">
+  <testcase classname="Rule" name="implements factory" time="0"></testcase>
+</testsuite>
+</testsuites>
