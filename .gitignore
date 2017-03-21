@@ -1,1 +1,7 @@
 .idea/
+node_modules/
+reports/junit/TEST*.xml
+reports/eslint/*.txt
+reports/coverage
+temp-*
+
