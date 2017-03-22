@@ -7,7 +7,7 @@
     "github-release": "./github-release",
     "test": "alias jasmine-node=./node_modules/.bin/jasmine-node; jasmine-node --junitreport tests/specs/; mv reports/*.xml reports/junit/; git checkout tests/props/*.*",
     "check-eslint": "alias eslint=./node_modules/.bin/eslint; OUT='./reports/eslint/eslint.txt'; eslint src/*.js > $OUT; eslint ./index.js >> $OUT; eslint tests/specs/*.js >> $OUT; echo \"DONE!\"",
-    "check-coverage": "rm -fr reports/coverage/; alias istanbul=./node_modules/.bin/istanbul; alias jasmine-node=./node_modules/.bin/jasmine-node; istanbul cover --include-all-sources jasmine-node tests/specs/; rm -fr reports/coverage/; mv coverage reports/; git checkout tests/props/*.*",
+    "check-coverage": "rm -fr reports/coverage/; alias istanbul=./node_modules/.bin/istanbul; alias jasmine-node=./node_modules/.bin/jasmine-node; istanbul cover --include-all-sources -x \"**src/tools/**\" jasmine-node tests/specs/; rm -fr reports/coverage/; mv coverage reports/; git checkout tests/props/*.*",
     "tests": "npm test; npm run check-eslint; npm run check-coverage",
     "rebuild": "rm -fr node_modules; npm install",
     "all": "npm run rebuild; npm run tests"
