@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuites>
-<testsuite name="Valdi exposes valdi.expression with factory method" errors="0" tests="1" failures="0" time="0.001" timestamp="2017-03-21T14:13:45">
-  <testcase classname="Valdi exposes valdi.expression with factory method" name="Valdi.expression" time="0.001"></testcase>
-</testsuite>
-</testsuites>

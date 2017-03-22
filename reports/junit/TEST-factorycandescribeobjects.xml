@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuites>
-<testsuite name="factory can describe objects" errors="0" tests="2" failures="0" time="0" timestamp="2017-03-21T14:13:45">
-  <testcase classname="factory can describe objects" name="new instance has alias" time="0"></testcase>
-  <testcase classname="factory can describe objects" name="new instance has alias" time="0"></testcase>
-</testsuite>
-</testsuites>
