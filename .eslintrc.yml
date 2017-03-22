@@ -4,6 +4,9 @@ env:
   jasmine: true
 
 extends: 'eslint:recommended'
+exclude_paths:
+   "src/tools/"
+
 rules:
   indent:
     - error
