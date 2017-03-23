@@ -224,3 +224,16 @@ describe('Basic checks', function () {
     });
 
 });
+
+describe('24 hrs Time Format', function () {
+    it('Valid time in 24hrs format', function () {
+        expect(InputValidator.isTime24('035')).toBe(true);
+        expect(InputValidator.isJsonString('1120')).toBe(true);
+        expect(InputValidator.isJsonString('1956')).toBe(true);
+    });
+    it('Valid time in 24hrs format', function () {
+        expect(InputValidator.isTime24('2501')).toBe(false);
+        expect(InputValidator.isJsonString('1161')).toBe(false);
+        expect(InputValidator.isJsonString('890')).toBe(false);
+    });
+});

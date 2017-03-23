@@ -24,6 +24,10 @@ var Config = require('./config'),
     };
 
 
+function valid24hoursTime(input) {
+
+};
+
 function InputValidator () {
 
     this.init = function () {
@@ -41,6 +45,10 @@ function InputValidator () {
             val = iv()._toNumber(val);
         }
         return typeof val === 'number';
+    };
+
+    this.isTime24 = function (val) {
+        return valid24hoursTime(val);
     };
     
     this.isInteger = function(val, matchStrings) {
