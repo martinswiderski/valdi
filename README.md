@@ -31,8 +31,8 @@ true
 false
 false
 ```
-#### More complex assertions (multiple conditions with OR/AND)
 
+#### More complex assertions (multiple conditions with OR/AND)
 
 ```javascript
 var Valdi = require('valdi');
@@ -59,5 +59,80 @@ shows following output:
 true
 false
 ```
+#### Using whitelists and blacklists
 
+The example above can be asserted with a simple whitelist scenario that makes the code much neater (@spooky-monkey):
+
+```javascript
+// include module in your project
+var Valdi = require('./index');
+```
+
+##### Whitelist provided in native Array
+
+```javascript
+// include module in your project
+var warYear = Valdi.simple.new('WW1 & WW2 years via native Array')
+        .integer().inList([1914, 
+                           1915, 
+                           1916, 
+                           1917, 
+                           1918, 
+                           1939, 
+                           1940, 
+                           1941, 
+                           1942, 
+                           1943, 
+                           1944, 
+                           1945]);
+
+console.log(warYear.desc);
+console.log(warYear.value(1944));
+console.log(warYear.value(1984));
+
+// true
+// false
+```
+
+##### Whitelist provided in JSON string
+
+```javascript
+// include module in your project
+var warYearJson = Valdi.simple.new('WW1 & WW2 years with whitelist in JSON')
+        .integer().inList('[1914, 1915, 1916, 1917, 1918, 1939, 1940, 1941, 1942, 1943, 1944, 1945]');
+
+console.log(warYearJson.desc);
+console.log(warYearJson.value(1944));
+console.log(warYearJson.value(1984));
+
+// true
+// false
+```
+
+##### Whitelist provided in simple CSV string
+
+```javascript
+// include module in your project
+var warYearCsv = Valdi.simple.new('WW1 & WW2 years with whitelist in CSV')
+        .integer().inList('1914,1915,1916,1917,1918,1939,1940,1941,1942,1943,1944,1945');
+
+console.log(warYearCsv.desc);
+console.log(warYearCsv.value(1944));
+console.log(warYearCsv.value(1984));
+
+// true
+// false
+```
+
+##### Whitelist provided in CSV string with double-quote delimiter
+
+```javascript
+// include module in your project
+var warYearCsv2 = Valdi.simple.new('WW1 & WW2 years with whitelist in CSV w. doublequote delimiters')
+        .integer().inList('"1914","1915","1916","1917","1918","1939","1940","1941","1942","1943","1944","1945"');
+
+console.log(warYearCsv2.desc);
+console.log(warYearCsv2.value(1944));
+console.log(warYearCsv2.value(1984));
+```
 

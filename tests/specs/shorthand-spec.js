@@ -185,6 +185,90 @@ describe('Basic checks again via simple', function () {
     });
 });
 
+describe('Implements lists matches', function () {
+    it('Whitelist inList()', function () {
+        expect(
+            simple.new(
+                'List as CSV string with doublequote as delimiter'
+            ).string().inList(
+                '"8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"'
+            ).value('2001:4860:4860::8844')
+        ).toBe(true);
+        expect(
+            simple.new(
+                'List as CSV string with no delimiter'
+            ).string().inList(
+                '8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844'
+            ).value('2001:4860:4860::8844')
+        ).toBe(true);
+        expect(
+            simple.new(
+                'List as Array in JSON string'
+            ).string().inList(
+                '["8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"]'
+            ).value('2001:4860:4860::8844')
+        ).toBe(true);
+        expect(
+            simple.new(
+                'List as native Array'
+            ).string().inList([
+                '8.8.8.8', 
+                '2001:4860:4860::8888', 
+                '2001:4860:4860::8844'
+            ]).value('2001:4860:4860::8844')
+        ).toBe(true);
+        expect(
+            simple.new(
+                'List as native Array'
+            ).string().inList([
+                '8.8.8.8', 
+                '2001:4860:4860::8888', 
+                '2001:4860:4860::8844'
+            ]).value('ABC')
+        ).toBe(false);
+    });
+    it('Whitelist inList()', function () {
+        expect(
+            simple.new(
+                'List as Array' 
+            ).string().notInList([
+                'Rebel',
+                'Conman',
+                'Cheat',
+                'Fraud'
+            ]).value('Jedi')
+        ).toBe(true);
+        expect(
+            simple.new(
+                'List as JSON string' 
+            ).string().notInList(
+                '["Rebel","Conman","Cheat","Fraud"]'
+            ).value('Jedi')
+        ).toBe(true);
+        expect(
+            simple.new(
+                'List as CSV string with doublequote as delimiter' 
+            ).string().notInList(
+                '"Rebel","Conman","Cheat","Fraud"'
+            ).value('Jedi')
+        ).toBe(true);
+        expect(
+            simple.new(
+                'List as CSV string no delimiter' 
+            ).string().notInList(
+                'Rebel,Conman,Cheat,Fraud'
+            ).value('Jedi')
+        ).toBe(true);
+        expect(
+            simple.new(
+                'List as CSV string no delimiter' 
+            ).string().notInList(
+                'Rebel,Conman,Cheat,Fraud'
+            ).value('Conman')
+        ).toBe(false);
+    });
+});
+
 var testdata = {
     German: {
         gebhardVonBluecher: 'Gebhard-Leberecht von Blücher Fürst von Wahlstatt 0123456789',
