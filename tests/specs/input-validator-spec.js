@@ -164,6 +164,8 @@ describe('Basic checks', function () {
             .toBe(md5('["8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"]'));
         expect(md5(JSON.stringify(InputValidator._toArray('', false))))
             .toBe(md5('[""]')); // empty returned
+        expect(InputValidator._toArray('[]', true))
+            .toBe(false); // false returned
     });
 
     it('Method InputValidator.inList', function () {
