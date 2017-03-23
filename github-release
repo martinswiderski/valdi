@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-env | grep 'npm'
-env | grep 'git'
-echo ""
-echo "$npm_package_repository_url"

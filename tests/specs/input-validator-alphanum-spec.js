@@ -27,6 +27,9 @@ describe('InputValidator', function () {
     it('isRegexMatch 1', function () {
         expect(InputValidator.isRegexMatch('0123456789', /^\w+$/)).toBe(true);
         expect(InputValidator.isRegexMatch('0123456789 (bad)', /^\w+$/)).toBe(false);
+        expect(InputValidator.isRegexMatch({ object: 'is-not-string' }, /^\w+$/)).toBe(false);
+        expect(InputValidator.isRegexMatch(null, /^\w+$/)).toBe(false);
+        expect(InputValidator.isRegexMatch(false, /^\w+$/)).toBe(false);
     });
     it('isRegexMatch 2', function () {
         expect(InputValidator.isRegexMatch('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456', /^\w+$/)).toBe(true);

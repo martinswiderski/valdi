@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-    version: '0.0.37',
-    published: '2017-03-22',
+    version: '0.0.371',
+    published: '2017-03-23',
     readme: 'README.md',
     package: 'package.json'
 };

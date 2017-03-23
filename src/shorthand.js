@@ -224,6 +224,16 @@ function Shorthand() {
         return this;
     };
 
+    this.inList = function(l) {
+        _addtest('inList', InputValidator.inList, [l]);
+        return this;
+    };
+
+    this.notInList = function(l) {
+        _addtest('notInList', InputValidator.notInList, [l]);
+        return this;
+    };
+
     // all other tooling
 
     this.version = function () {
