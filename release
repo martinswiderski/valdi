@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+clear
+BASHURL='https://raw.githubusercontent.com/martinswiderski/toolbox/master/nodejs/tag-and-publish-npm.sh'
+curl "$BASHURL" | bash
