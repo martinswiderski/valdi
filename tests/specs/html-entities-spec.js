@@ -8,6 +8,8 @@ console.log('MD5: ' + md5(fs.readFileSync(__filename)) + ' File: ' + path.basena
 
 describe('HtmlEntities implements tool methods for decoding and encoding of the HTML Entities', function () {
     it('isValid', function () {
+        expect(HtmlEntities.isValid({ object: 'IsNotString' })).toBe(false);
+        expect(HtmlEntities.isValid(false)).toBe(false);
         expect(HtmlEntities.isValid('William Shakespeare')).toBe(false);
         expect(HtmlEntities.isValid('عبد الرحمن الثالث')).toBe(false);
         expect(HtmlEntities.isValid('&#1593;&#1576;&#1583;&#32;&#1575;&#1604;&#1585;&#1581;&#1605;&#1606;&#32;&#1575;&#1604;&#1579;&#1575;&#1604;&#1579;')).toBe(true);
