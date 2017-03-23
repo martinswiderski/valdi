@@ -128,8 +128,11 @@ console.log(warYearCsv.value(1984));
 
 ```javascript
 // include module in your project
-var warYearCsv2 = Valdi.simple.new('WW1 & WW2 years with whitelist in CSV w. doublequote delimiters')
-        .integer().inList('"1914","1915","1916","1917","1918","1939","1940","1941","1942","1943","1944","1945"');
+var warYearCsv2 = Valdi.simple.new(
+    'WW1 & WW2 years with whitelist in CSV w. doublequote delimiters'
+    ).integer().inList(
+        '"1914","1915","1916","1917","1918","1939","1940","1941","1942","1943","1944","1945"'
+    );
 
 console.log(warYearCsv2.desc);
 console.log(warYearCsv2.value(1944));
