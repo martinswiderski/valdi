@@ -18,6 +18,24 @@ describe('Basic checks', function () {
         expect(InputValidator.isNumber(10.11)).toBe(true);
     });
 
+    it('Method InputValidator.isMin', function () {
+        expect(InputValidator.isMin({ obj: true }, 100)).toBe(false);
+        expect(InputValidator.isMin(false, 100)).toBe(false);
+        expect(InputValidator.isMin(4, 3)).toBe(true);
+        expect(InputValidator.isMin(-1, 0.3)).toBe(false);
+        expect(InputValidator.isMin(4.45, 3.99)).toBe(true);
+        expect(InputValidator.isMin(-1.01, 0.3)).toBe(false);
+    });
+
+    it('Method InputValidator.isMax', function () {
+        expect(InputValidator.isMax({ obj: true }, 100)).toBe(false);
+        expect(InputValidator.isMax(false, 100)).toBe(false);
+        expect(InputValidator.isMax(40, 100)).toBe(true);
+        expect(InputValidator.isMax(1.91, 1.99)).toBe(true);
+        expect(InputValidator.isMax(6.1, 6.11)).toBe(true);
+        expect(InputValidator.isMax(-5, -3.14)).toBe(true);
+    });
+
     it('Method InputValidator._toNumber', function () {
         expect(InputValidator._toNumber(false)).toBe(false);
         expect(InputValidator._toNumber('ABC')).toBe('ABC');
@@ -95,6 +113,22 @@ describe('Basic checks', function () {
         expect(InputValidator.isString(112.33)).toBe(false);
         expect(InputValidator.isString('Valid string')).toBe(true);
     });
+
+    it('Method InputValidator.isLengthMax', function () {
+        expect(InputValidator.isLengthMax({ obj: true }, 100)).toBe(false);
+        expect(InputValidator.isLengthMax(false, 100)).toBe(false);
+        expect(InputValidator.isLengthMax('ABCDE', 5)).toBe(true);
+        expect(InputValidator.isLengthMax('ZCYZCY', 3)).toBe(false);
+        expect(InputValidator.isLengthMax('', 3)).toBe(true);
+    });
+
+    it('Method InputValidator.isLengthMin', function () {
+        expect(InputValidator.isLengthMin({ obj: true }, 100)).toBe(false);
+        expect(InputValidator.isLengthMin(false, 100)).toBe(false);
+        expect(InputValidator.isLengthMin('AA', 5)).toBe(false);
+        expect(InputValidator.isLengthMin('Hello World', 3)).toBe(true);
+    });
+
 
     it('Method InputValidator.isNumberAsString', function () {
         expect(InputValidator.isNumberAsString(false)).toBe(false);

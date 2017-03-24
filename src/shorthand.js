@@ -108,6 +108,16 @@ function Shorthand() {
         return this;
     };
 
+    this.min = function(min) {
+        _addtest('min', InputValidator.isMin, [min]);
+        return this;
+    };
+
+    this.max = function(max) {
+        _addtest('max', InputValidator.isMax, [max]);
+        return this;
+    };
+
     this.integerAsString = function() {
         _addtest('integerAsString', InputValidator.isIntegerAsString, []);
         return this;
@@ -149,6 +159,16 @@ function Shorthand() {
 
     this.string = function() {
         _addtest('string', InputValidator.isString, []);
+        return this;
+    };
+
+    this.lengthMax = function(max) {
+        _addtest('lengthMax', InputValidator.isLengthMax, [max]);
+        return this;
+    };
+
+    this.lengthMin = function(min) {
+        _addtest('lengthMin', InputValidator.isLengthMin, [min]);
         return this;
     };
 

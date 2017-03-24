@@ -35,6 +35,42 @@ function InputValidator () {
         return Config.version;
     };
 
+    this._processNumbers = function (val, mark, expression) {
+        if (ins().name(val) === 'boolean'
+            || ins().name(mark) === 'boolean') {
+            return false;
+        }
+        val  = (iv().isNumber(val) || iv().isNumberAsString(val)) ? iv()._toNumber(val) : val;
+        mark = (iv().isNumber(mark) || iv().isNumberAsString(mark)) ? iv()._toNumber(mark) : mark;
+        return expression(val, mark);
+    };
+
+    this.isMin = function(val, mark) {
+        return iv()._processNumbers(
+            val,
+            mark,
+            function (v, m) {
+                return (v > m || v === m);
+            });
+    };
+
+    this.isMax = function(val, mark) {
+        return iv()._processNumbers(
+            val,
+            mark,
+            function (v, m) {
+                return (m > v || v === m);
+            });
+    };
+
+    this.isLengthMax = function(val, mark) {
+        return (typeof val === 'string') ? (val.length <= parseInt(mark)) : false;
+    };
+
+    this.isLengthMin = function(val, mark) {
+        return (typeof val === 'string') ? (val.length >= parseInt(mark)) : false;
+    };
+
     this.isNumber = function(val, matchStrings) {
         if (typeof matchStrings !== 'undefined'
             && matchStrings === true && iv().isNumberAsString(val)) {
@@ -166,32 +202,21 @@ function InputValidator () {
     };
     
     this.isGreaterThan = function(val, mark) {
-        if (ins().name(val) === 'boolean'
-            || ins().name(mark) === 'boolean') {
-            return false;
-        }
-        val  = (iv().isNumber(val) || iv().isNumberAsString(val)) ? iv()._toNumber(val) : val;
-        mark = (iv().isNumber(mark) || iv().isNumberAsString(mark)) ? iv()._toNumber(mark) : mark;
-        //console.log('isGreaterThan');
-        //console.log('val');
-        //console.log(typeof val);
-        //console.log(val);
-        //console.log('merk');
-        //console.log(typeof mark);
-        //console.log(mark);
-        //console.log('expression');
-        //console.log(val > mark);
-        return (val > mark);
+        return iv()._processNumbers(
+            val,
+            mark,
+            function (v, m) {
+                return (v > m);
+            });
     };
     
     this.isLessThan = function(val, mark) {
-        if (ins().name(val) === 'boolean'
-            || ins().name(mark) === 'boolean') {
-            return false;
-        }
-        val  = (iv().isNumber(val) || iv().isNumberAsString(val)) ? iv()._toNumber(val) : val;
-        mark = (iv().isNumber(mark) || iv().isNumberAsString(mark)) ? iv()._toNumber(mark) : mark;
-        return (mark > val);
+        return iv()._processNumbers(
+            val,
+            mark,
+            function (v, m) {
+                return (m > v);
+            });
     };
     
     this.isEqual = function(val, mark) {

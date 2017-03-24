@@ -83,6 +83,19 @@ describe('Basic checks again via simple', function () {
         expect(simple.new('An integer').integer().value(1234)).toBe(true);
     });
 
+    it('Methods chain simple.integer() .min() .max()', function () {
+        expect(simple.new('An integer with min').integer().min(23).value(false)).toBe(false);
+        expect(simple.new('An integer with min').integer().min(23).value(100)).toBe(true);
+        expect(simple.new('An integer with min').integer().min(123).value(100)).toBe(false);
+        expect(simple.new('An integer with max').integer().max(23).value(false)).toBe(false);
+        expect(simple.new('An integer with max').integer().max(23).value(22)).toBe(true);
+        expect(simple.new('An integer with max').integer().max(23).value(55)).toBe(false);
+        expect(simple.new('An integer with max & max').integer().min(5).max(15).value(false)).toBe(false);
+        expect(simple.new('An integer with max & max').integer().min(5).max(15).value(14)).toBe(true);
+        expect(simple.new('An integer with max & max').integer().min(5).max(15).value(-1)).toBe(false);
+        expect(simple.new('An integer with max & max').integer().min(5).max(15).value(16)).toBe(false);
+    });
+
     it('Methods chain ...integerAsString()', function () {
         expect(simple.new('An integer as string').integerAsString().value(false)).toBe(false);
         expect(simple.new('An integer as string').integerAsString().value('2345')).toBe(true);
