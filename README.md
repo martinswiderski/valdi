@@ -5,7 +5,7 @@ Input validation with extendable valid patterns definitions - for ES6 version ch
 ### Current version
 ver. **0.0.372**
 
-[![Build Status](https://travis-ci.org/martinswiderski/valdi.svg?branch=master)](https://travis-ci.org/martinswiderski/valdi) [![npm version](https://badge.fury.io/js/valdi.svg)](https://www.npmjs.com/package/valdi)
+[![Build Status](https://travis-ci.org/martinswiderski/valdi.svg?branch=master)](https://travis-ci.org/martinswiderski/valdi)
 
 In order to install please run in your project path:
 
