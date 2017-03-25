@@ -618,7 +618,7 @@ console.log( simple.new('Valid Alphanum')
 console.log( 'expected: true' ); 
 console.log( '' );
 console.log( simple.new('Valid Alphanum')
-                .string().alphanumeric('ar').value('صلاحالدينيوسفبنأيوب0123456789');
+                .string().alphanumeric('ar').value('صلاحالدينيوسفبنأيوب0123456789') );
 console.log( 'expected: true' ); 
 console.log( '' );
 ```
