@@ -506,10 +506,12 @@ console.log( '' );
 ###### URL
 
 ```javascript
-console.log( simple.new('Valid URL').string().url().value('http://cecpvmlx080.internal.scee.net:8055/') );
+console.log( simple.new('Valid URL')
+                .string().url().value('http://cecpvmlx080.internal.boo.net:8055/') );
 console.log( 'expected: true' ); 
 console.log( '' );
-console.log( simple.new('Invalid URL').string().url().value('GaHssDGHDGghwsgyw') );
+console.log( simple.new('Invalid URL')
+                .string().url().value('GaHssDGHDGghwsgyw') );
 console.log( 'expected: false' ); 
 console.log( '' );
 ```
@@ -550,22 +552,28 @@ console.log( '' );
 ###### alphanumeric
 
 ```javascript
-console.log( simple.new('Valid Alphanum').string().alphanumeric('xx').value('2001:4860:4860::8888') );
+console.log( simple.new('Valid Alphanum')
+                .string().alphanumeric('xx').value('2001:4860:4860::8888') );
 console.log( 'expected: false' ); 
 console.log( '' );
-console.log( simple.new('Valid Alphanum').string().alphanumeric('en').value(testdata.English.christopherMarlowe) );
+console.log( simple.new('Valid Alphanum')
+                .string().alphanumeric('en').value(testdata.English.christopherMarlowe) );
 console.log( 'expected: true' ); 
 console.log( '' );
-console.log( simple.new('Valid Alphanum').string().alphanumeric('de').value(testdata.German.gebhardVonBluecher) );
+console.log( simple.new('Valid Alphanum')
+                .string().alphanumeric('de').value(testdata.German.gebhardVonBluecher) );
 console.log( 'expected: true' ); 
 console.log( '' );
-console.log( simple.new('Valid Alphanum').string().alphanumeric('fr').value(testdata.French.deSaintExupery) );
+console.log( simple.new('Valid Alphanum')
+                .string().alphanumeric('fr').value(testdata.French.deSaintExupery) );
 console.log( 'expected: true' ); 
 console.log( '' );
-console.log( simple.new('Valid Alphanum').string().alphanumeric('ja').value(testdata.Japanese.miyamotoMusashi) );
+console.log( simple.new('Valid Alphanum')
+                .string().alphanumeric('ja').value(testdata.Japanese.miyamotoMusashi) );
 console.log( 'expected: true' ); 
 console.log( '' );
-console.log( simple.new('Valid Alphanum').string().alphanumeric('ar').value(testdata.Arabic.salahAdDin) );
+console.log( simple.new('Valid Alphanum')
+                .string().alphanumeric('ar').value(testdata.Arabic.salahAdDin) );
 console.log( 'expected: true' ); 
 console.log( '' );
 ```
@@ -573,10 +581,12 @@ console.log( '' );
 ###### regexMatch
 
 ```javascript
-console.log( simple.new('Valid Regex').string().regexMatch(/^\w+$/).value('0123456789') );
+console.log( simple.new('Valid Regex')
+                .string().regexMatch(/^\w+$/).value('0123456789') );
 console.log( 'expected: true' ); 
 console.log( '' );
-console.log( simple.new('Invalid Regex').string().regexMatch(/^\w+$/).value('0123456789 (trigger regex false)') );
+console.log( simple.new('Invalid Regex')
+                .string().regexMatch(/^\w+$/).value('0123456789 (trigger regex false)') );
 console.log( 'expected: false' ); 
 console.log( '' );
 ```
@@ -584,10 +594,12 @@ console.log( '' );
 ###### jsonString
 
 ```javascript
-console.log( simple.new('Valid JSON').string().jsonString().value(JSON.stringify({this: 'is JSON'})) );
+console.log( simple.new('Valid JSON')
+                .string().jsonString().value(JSON.stringify({this: 'is JSON'})) );
 console.log( 'expected: true' ); 
 console.log( '' );
-console.log( simple.new('Invalid JSON').string().jsonString().value('GaHssDGHDGghwsgyw') );
+console.log( simple.new('Invalid JSON')
+                .string().jsonString().value('GaHssDGHDGghwsgyw') );
 console.log( 'expected: false' ); 
 console.log( '' );
 ```
