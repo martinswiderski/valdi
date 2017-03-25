@@ -189,12 +189,18 @@ describe('Basic checks again via simple', function () {
     });
 
     it('Methods chain ..arrayAsString()', function () {
-        expect(simple.new('Array as string').string().arrayAsString().value('["8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"]')).toBe(true);
-        expect(simple.new('Array as string').string().arrayAsString().value('"8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"')).toBe(true);
-        expect(simple.new('Array as string').string().arrayAsString().value('8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844')).toBe(true);
-        expect(simple.new('Array as string').string().arrayAsString().value('8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844')).toBe(true);
-        expect(simple.new('Array as string').string().arrayAsString().value(false)).toBe(false);
-        expect(simple.new('Array as string').string().arrayAsString().value([1, 2,3])).toBe(false);
+        expect(simple.new('Array as string')
+            .string().arrayAsString().value('["8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"]')).toBe(true);
+        expect(simple.new('Array as string')
+            .string().arrayAsString().value('"8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"')).toBe(true);
+        expect(simple.new('Array as string')
+            .string().arrayAsString().value('8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844')).toBe(true);
+        expect(simple.new('Array as string')
+            .string().arrayAsString().value('8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844')).toBe(true);
+        expect(simple.new('Array as string')
+            .string().arrayAsString().value(false)).toBe(false);
+        expect(simple.new('Array as string')
+            .string().arrayAsString().value([1, 2,3])).toBe(false);
     });
 });
 
