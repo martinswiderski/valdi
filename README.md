@@ -139,7 +139,7 @@ console.log(warYearCsv2.value(1944));
 console.log(warYearCsv2.value(1984));
 ```
 
-##### <a name="examples"></a>Other examples
+#### <a name="examples"></a>Other examples
 
  * [simple.number().value()](#cookbook-1)
  * [simple.numberAsString().value()](#cookbook-2)
