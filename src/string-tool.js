@@ -1,7 +1,7 @@
 'use strict';
 var Config = require('./config'),
-    sha1 = require('sha1'),
-    md5 = require('md5'),
+    sha1 = null,
+    md5 = null,
     Inspector = require('./inspector');
 
 function StringTool () {
@@ -38,10 +38,16 @@ function StringTool () {
     };
 
     this.md5 = function(input) {
+        if (md5 === null) {
+            md5 = require('md5');
+        }
         return md5(this.cast(input));
     };
 
     this.sha1 = function(input) {
+        if (sha1 === null) {
+            sha1 = require('sha1');
+        }
         return sha1(this.cast(input));
     };
 

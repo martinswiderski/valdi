@@ -1,7 +1,6 @@
 var path = require('path'),
     fs = require('fs'),
     md5 = require('md5'),
-    //Valdi = require('./../../index'),
     InputValidator = require('./../../src/input-validator');
 
 
