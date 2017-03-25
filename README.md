@@ -176,24 +176,7 @@ Simple is providing only conjuntions (assertions joined by AND only)!
 
 ```javascript
 var Valdi = require('valdi'),
-    simple = Valdi.simple, // simple validators all rules in conjunction (AND)
-    testdata = {
-        German: {
-            gebhardVonBluecher: 'Gebhard-Leberecht von Blücher Fürst von Wahlstatt 0123456789',
-        },
-        Arabic: {
-            salahAdDin: 'صلاحالدينيوسفبنأيوب0123456789'
-        },
-        Japanese: {
-            miyamotoMusashi: '宮本武蔵 0123456789'
-        },
-        English: {
-            christopherMarlowe: 'Christopher Marlowe\'s 0123456789'
-        },
-        French: {
-            deSaintExupery: 'AntoineDeSaint-Exupéry0123456789'
-        }
-    };
+    simple = Valdi.simple;    // simple validators all rules in conjunction (AND)
 ```
 [&laquo; back to list](#examples)
 
@@ -618,23 +601,23 @@ console.log( simple.new('Valid Alphanum')
 console.log( 'expected: false' ); 
 console.log( '' );
 console.log( simple.new('Valid Alphanum')
-                .string().alphanumeric('en').value(testdata.English.christopherMarlowe) );
+                .string().alphanumeric('en').value('Christopher Marlowe\'s 0123456789'));
 console.log( 'expected: true' ); 
 console.log( '' );
 console.log( simple.new('Valid Alphanum')
-                .string().alphanumeric('de').value(testdata.German.gebhardVonBluecher) );
+                .string().alphanumeric('de').value('Gebhard-Leberecht von Blücher Fürst von Wahlstatt 0123456789') );
 console.log( 'expected: true' ); 
 console.log( '' );
 console.log( simple.new('Valid Alphanum')
-                .string().alphanumeric('fr').value(testdata.French.deSaintExupery) );
+                .string().alphanumeric('fr').value('AntoineDeSaint-Exupéry0123456789') );
 console.log( 'expected: true' ); 
 console.log( '' );
 console.log( simple.new('Valid Alphanum')
-                .string().alphanumeric('ja').value(testdata.Japanese.miyamotoMusashi) );
+                .string().alphanumeric('ja').value('宮本武蔵 0123456789') );
 console.log( 'expected: true' ); 
 console.log( '' );
 console.log( simple.new('Valid Alphanum')
-                .string().alphanumeric('ar').value(testdata.Arabic.salahAdDin) );
+                .string().alphanumeric('ar').value('صلاحالدينيوسفبنأيوب0123456789');
 console.log( 'expected: true' ); 
 console.log( '' );
 ```
