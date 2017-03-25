@@ -630,7 +630,7 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
-<a name="cookbook-25">###### jsonString</a>
+###### <a name="cookbook-25"></a>jsonString
 
 ```javascript
 console.log( simple.new('Valid JSON')
