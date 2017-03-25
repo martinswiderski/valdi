@@ -59,7 +59,39 @@ shows following output:
 true
 false
 ```
-#### Using whitelists and blacklists
+
+#### <a name="examples"></a>Other examples
+
+ * [whitelists and blacklists](#in-list)
+ * [Simple assertions](#simple)
+ * [simple.number().value()](#cookbook-1)
+ * [simple.numberAsString().value()](#cookbook-2)
+ * [simple.integer().value()](#cookbook-3)
+ * [simple.integer() .min() .max()](#cookbook-4)
+ * [simple.integerAsString()](#cookbook-5)
+ * [simple.real()](#cookbook-6)
+ * [simple.realAsString()](#cookbook-7)
+ * [simple.bool()](#cookbook-8)
+ * [simple.null()](#cookbook-9)
+ * [simple.validLocale()](#cookbook-10)
+ * [simple.string()](#cookbook-11)
+ * [simple.email()](#cookbook-12)
+ * [simple.emptyString()](#cookbook-13)
+ * [simple.number().greaterThan()](#cookbook-14)
+ * [simple.number().lessThan()](#cookbook-15)
+ * [simple.equal()](#cookbook-16)
+ * [simple.notEqual()](#cookbook-17)
+ * [simple.arrayAsString()](#cookbook-18)
+ * [simple.url()](#cookbook-19)
+ * [simple.base64()](#cookbook-20)
+ * [simple.ipv4()](#cookbook-21)
+ * [simple.ipv5()](#cookbook-22)
+ * [simple.alphanumeric()](#cookbook-23)
+ * [simple.regexMatch()](#cookbook-24)
+ * [simple.jsonString()](#cookbook-25)
+
+
+### <a name="in-list"></a>Using whitelists and blacklists
 
 The example above can be asserted with a simple whitelist scenario that makes the code much neater (@spooky-monkey):
 
@@ -138,34 +170,10 @@ console.log(warYearCsv2.desc);
 console.log(warYearCsv2.value(1944));
 console.log(warYearCsv2.value(1984));
 ```
+[&laquo; back to list](#examples)
 
-#### <a name="examples"></a>Other examples
 
- * [simple.number().value()](#cookbook-1)
- * [simple.numberAsString().value()](#cookbook-2)
- * [simple.integer().value()](#cookbook-3)
- * [simple.integer() .min() .max()](#cookbook-4)
- * [simple.integerAsString()](#cookbook-5)
- * [simple.real()](#cookbook-6)
- * [simple.realAsString()](#cookbook-7)
- * [simple.bool()](#cookbook-8)
- * [simple.null()](#cookbook-9)
- * [simple.validLocale()](#cookbook-10)
- * [simple.string()](#cookbook-11)
- * [simple.email()](#cookbook-12)
- * [simple.emptyString()](#cookbook-13)
- * [simple.number().greaterThan()](#cookbook-14)
- * [simple.number().lessThan()](#cookbook-15)
- * [simple.equal()](#cookbook-16)
- * [simple.notEqual()](#cookbook-17)
- * [simple.arrayAsString()](#cookbook-18)
- * [simple.url()](#cookbook-19)
- * [simple.base64()](#cookbook-20)
- * [simple.ipv4()](#cookbook-21)
- * [simple.ipv5()](#cookbook-22)
- * [simple.alphanumeric()](#cookbook-23)
- * [simple.regexMatch()](#cookbook-24)
- * [simple.jsonString()](#cookbook-25)
+### <a name="simple"></a>Simple assertions
 
 **Please note:**
 ```
