@@ -65,7 +65,7 @@ The example above can be asserted with a simple whitelist scenario that makes th
 
 ```javascript
 // include module in your project
-var Valdi = require('./index');
+var Valdi = require('valdi');
 ```
 
 ##### Whitelist provided in native Array
