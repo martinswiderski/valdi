@@ -139,7 +139,7 @@ console.log(warYearCsv2.value(1944));
 console.log(warYearCsv2.value(1984));
 ```
 
-#### Simple assertions (AND only)
+##### Simple assertions (AND only)
 
 
 ```javascript
@@ -164,9 +164,8 @@ var Valdi = require('./index'),
     };
 ```
 
+###### Methods chain simple.number().value();
 ```javascript
-console.log( '----  Methods chain simple.number().value() ----' );
-
 console.log( simple.new('A number').number().value(false) );
 console.log( 'expected: false' ); 
 console.log( '' );
@@ -187,10 +186,9 @@ console.log( 'expected: true' );
 console.log( '' );
 ```
 
+###### Methods chain simple.numberAsString().value()
 
 ```javascript
-console.log( '----  Methods chain simple.numberAsString().value() ----' );
-
 console.log( simple.new('A number as string').numberAsString().value(false) );
 console.log( 'expected: false' ); 
 console.log( '' );
@@ -202,10 +200,9 @@ console.log( 'expected: true' );
 console.log( '' );
 ```
 
+###### Methods chain simple.integer().value()
 
 ```javascript
-console.log( '----  Methods chain simple.integer().value() ----' );
-
 console.log( simple.new('An integer').integer().value(false) );
 console.log( 'expected: false' ); 
 console.log( '' );
@@ -217,10 +214,9 @@ console.log( 'expected: true' );
 console.log( '' );
 ```
 
+###### Methods chain simple.integer() .min() .max()
 
 ```javascript
-console.log( '----  Methods chain simple.integer() .min() .max() ----' );
-
 console.log( simple.new('An integer with min').integer().min(23).value(false) );
 console.log( 'expected: false' ); 
 console.log( '' );
