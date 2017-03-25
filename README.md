@@ -11,6 +11,8 @@ ver. **0.0.373**
 
 [![MIT License](https://raw.githubusercontent.com/martinswiderski/valdi/master/mit-license.png)](LICENSE) [![Build Status](https://travis-ci.org/martinswiderski/valdi.svg?branch=master)](https://travis-ci.org/martinswiderski/valdi) [![npm version](https://badge.fury.io/js/valdi.svg)](https://www.npmjs.com/package/valdi)
 
+[![NPM](https://nodei.co/npm/valdi.png)](https://nodei.co/npm/valdi)
+
 In order to install please run in your project path:
 
 ```bash
