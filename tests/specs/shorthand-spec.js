@@ -302,7 +302,7 @@ var testdata = {
 
 describe('Additional validators', function () {
     it('URL', function () {
-        expect(simple.new('Valid URL').string().url().value('http://cecpvmlx080.internal.scee.net:8055/')).toBe(true);
+        expect(simple.new('Valid URL').string().url().value('http://cecpvmlx080.internal.boo.net:8055/')).toBe(true);
         expect(simple.new('Invalid URL').string().url().value('GaHssDGHDGghwsgyw')).toBe(false);
     });
     it('base64', function () {
