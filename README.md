@@ -483,22 +483,28 @@ console.log( '' );
 ###### Methods chain ..arrayAsString()
 
 ```javascript
-console.log( simple.new('Array as string').string().arrayAsString().value('["8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"]') );
+console.log( simple.new('Array as string')
+                .string().arrayAsString().value('["8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"]') );
 console.log( 'expected: true' ); 
 console.log( '' );
-console.log( simple.new('Array as string').string().arrayAsString().value('"8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"') );
+console.log( simple.new('Array as string')
+                .string().arrayAsString().value('"8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"') );
 console.log( 'expected: true' ); 
 console.log( '' );
-console.log( simple.new('Array as string').string().arrayAsString().value('8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844') );
+console.log( simple.new('Array as string')
+                .string().arrayAsString().value('8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844') );
 console.log( 'expected: true' ); 
 console.log( '' );
-console.log( simple.new('Array as string').string().arrayAsString().value('8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844') );
+console.log( simple.new('Array as string')
+                .string().arrayAsString().value('8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844') );
 console.log( 'expected: true' ); 
 console.log( '' );
-console.log( simple.new('Array as string').string().arrayAsString().value(false) );
+console.log( simple.new('Array as string')
+                .string().arrayAsString().value(false) );
 console.log( 'expected: false' ); 
 console.log( '' );
-console.log( simple.new('Array as string').string().arrayAsString().value([1, 2,3]) );
+console.log( simple.new('Array as string')
+                .string().arrayAsString().value([1, 2,3]) );
 console.log( 'expected: false' ); 
 console.log( '' );
 ```
