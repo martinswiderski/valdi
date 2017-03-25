@@ -139,7 +139,7 @@ console.log(warYearCsv2.value(1944));
 console.log(warYearCsv2.value(1984));
 ```
 
-##### Other examples
+##### <a name="examples"></a>Other examples
 
  * [simple.number().value()](#cookbook-1)
  * [simple.numberAsString().value()](#cookbook-2)
@@ -171,7 +171,7 @@ console.log(warYearCsv2.value(1984));
 ```
 Simple is providing only conjuntions (assertions joined by AND only)!
 ```
-
+>> [back to list](#examples)
 
 ##### Including Valdi in your project
 
@@ -197,7 +197,7 @@ var Valdi = require('valdi'),
     };
 ```
 
-###### Methods chain simple.number().value();
+###### <a name="cookbook-1"></a>Methods chain simple.number().value();
 ```javascript
 console.log( simple.new('A number').number().value(false) );
 console.log( 'expected: false' ); 
@@ -219,7 +219,7 @@ console.log( 'expected: true' );
 console.log( '' );
 ```
 
-###### Methods chain simple.numberAsString().value()
+###### <a name="cookbook-2"></a>Methods chain simple.numberAsString().value()
 
 ```javascript
 console.log( simple.new('A number as string').numberAsString().value(false) );
@@ -233,7 +233,7 @@ console.log( 'expected: true' );
 console.log( '' );
 ```
 
-###### Methods chain simple.integer().value()
+###### <a name="cookbook-3"></a>Methods chain simple.integer().value()
 
 ```javascript
 console.log( simple.new('An integer').integer().value(false) );
@@ -247,7 +247,7 @@ console.log( 'expected: true' );
 console.log( '' );
 ```
 
-###### Methods chain simple.integer() .min() .max()
+###### <a name="cookbook-4"></a>Methods chain simple.integer() .min() .max()
 
 ```javascript
 console.log( simple.new('An integer with min').integer().min(23).value(false) );
@@ -282,7 +282,7 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
-###### Methods chain ...integerAsString()
+###### <a name="cookbook-5"></a>Methods chain ...integerAsString()
 
 ```javascript
 console.log( simple.new('An integer as string').integerAsString().value(false) );
@@ -293,7 +293,7 @@ console.log( 'expected: true' );
 console.log( '' );
 ```
 
-###### Methods chain ...real()
+###### <a name="cookbook-6"></a>Methods chain ...real()
 
 ```javascript
 console.log( simple.new('A real number').real().value(false) );
@@ -307,7 +307,7 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
-###### Methods chain ...realAsString()
+###### <a name="cookbook-7"></a>Methods chain ...realAsString()
 
 ```javascript
 console.log( simple.new('A real number as string').realAsString().value(false) );
@@ -318,7 +318,7 @@ console.log( 'expected: true' );
 console.log( '' );
 ```
 
-###### Methods chain ...bool()
+###### <a name="cookbook-8"></a>Methods chain ...bool()
 
 ```javascript
 console.log( simple.new('A bool').bool().value(false) );
@@ -335,7 +335,7 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
-###### Methods chain ..null()
+###### <a name="cookbook-9"></a>Methods chain ..null()
 
 ```javascript
 console.log( simple.new('A null').null().value(null) );
@@ -349,7 +349,7 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
-###### Methods chain ..validLocale()
+###### <a name="cookbook-10"></a>Methods chain ..validLocale()
 
 ```javascript
 console.log( simple.new('A valid locale').validLocale().value(false) );
@@ -373,7 +373,7 @@ console.log( '' );
 ```
 
 
-###### Methods chain ..string()
+###### <a name="cookbook-11"></a>Methods chain ..string()
 
 ```javascript
 console.log( simple.new('A string value').string().value('false') );
@@ -391,7 +391,7 @@ console.log( '' );
 ```
 
 
-###### Methods chain ...email()
+###### <a name="cookbook-12"></a>Methods chain ...email()
 
 ```javascript
 console.log( simple.new('An email').string().value('martin.swiderski@gmail.com') );
@@ -405,7 +405,7 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
-###### Methods chain ...emptyString()
+###### <a name="cookbook-13"></a>Methods chain ...emptyString()
 
 ```javascript
 console.log( simple.new('An empty string').emptyString().value('martin.swiderski@gmail.com') );
@@ -419,7 +419,7 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
-###### Methods chain ...number().greaterThan()
+###### <a name="cookbook-14"></a>Methods chain ...number().greaterThan()
 
 ```javascript
 console.log( simple.new('A number greater than').number().greaterThan(100).value(false) );
@@ -454,7 +454,7 @@ console.log( 'expected: true' );
 console.log( '' );
 ```
 
-###### Methods chain ....number().lessThan()
+###### <a name="cookbook-15"></a>Methods chain ....number().lessThan()
 
 ```javascript
 console.log( simple.new('A number less than').number().lessThan(100).value(false) );
@@ -483,7 +483,7 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
-###### Methods chain ...equal()
+###### <a name="cookbook-16"></a>Methods chain ...equal()
 
 ```javascript
 console.log( simple.new('A number equal').number().equal(100).value(100) );
@@ -498,7 +498,7 @@ console.log( '' );
 ```
 
 
-###### Methods chain ...notEqual()
+###### <a name="cookbook-17"></a>Methods chain ...notEqual()
 
 ```javascript
 console.log( simple.new('A number not equal').number().notEqual(123).value(100) );
@@ -513,7 +513,7 @@ console.log( '' );
 ```
 
 
-###### Methods chain ..arrayAsString()
+###### <a name="cookbook-18"></a>Methods chain ..arrayAsString()
 
 ```javascript
 console.log( simple.new('Array as string')
@@ -542,7 +542,7 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
-###### URL
+###### <a name="cookbook-19"></a>URL
 
 ```javascript
 console.log( simple.new('Valid URL')
@@ -555,7 +555,7 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
-###### base64
+###### <a name="cookbook-20"></a>base64
 
 ```javascript
 console.log( simple.new('Valid Base64').string().base64().value('aGVyZSB3ZSBjb21lIGFnYWlu') );
@@ -566,7 +566,7 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
-###### ipv4
+###### <a name="cookbook-21"></a>ipv4
 
 ```javascript
 console.log( simple.new('Valid IPv4').string().ipv4().value('10.10.1.1') );
@@ -577,7 +577,7 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
-###### ipv5
+###### <a name="cookbook-22"></a>ipv5
 
 ```javascript
 console.log( simple.new('Valid IPv6').string().ipv6().value('2001:4860:4860::8888') );
@@ -588,7 +588,7 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
-###### alphanumeric
+###### <a name="cookbook-23"></a>alphanumeric
 
 ```javascript
 console.log( simple.new('Valid Alphanum')
@@ -617,7 +617,7 @@ console.log( 'expected: true' );
 console.log( '' );
 ```
 
-###### regexMatch
+###### <a name="cookbook-24"></a>regexMatch
 
 ```javascript
 console.log( simple.new('Valid Regex')
