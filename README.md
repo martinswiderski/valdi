@@ -1,9 +1,12 @@
 valdi
 ---
+<p align="left">
+  <img src="https://raw.githubusercontent.com/martinswiderski/valdi/master/valdi-logo-small.png" alt="valdi"/>
+</p>
 Input validation with extendable valid patterns definitions - for ES6 version check [valdi-es6](https://github.com/martinswiderski/valdi-es6).
 
 ### Current version
-ver. **0.0.373**
+ver. **0.0.374**
 
 [![Build Status](https://travis-ci.org/martinswiderski/valdi.svg?branch=master)](https://travis-ci.org/martinswiderski/valdi) [![npm version](https://badge.fury.io/js/valdi.svg)](https://www.npmjs.com/package/valdi)
 

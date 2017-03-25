@@ -1,6 +1,6 @@
 {
   "name": "valdi",
-  "version": "0.0.373",
+  "version": "0.0.374",
   "description": "Input validation with extendable valid patterns definitions (pre-ES6 version).",
   "main": "index.js",
   "scripts": {
