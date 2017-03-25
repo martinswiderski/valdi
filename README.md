@@ -141,31 +141,31 @@ console.log(warYearCsv2.value(1984));
 
 ##### Other examples
 
- * [simple.number().value()](#cookbook_1)
- * [simple.numberAsString().value()](#cookbook_2)
- * [simple.integer().value()](#cookbook_3)
- * [simple.integer() .min() .max()](#cookbook_4)
- * [simple.integerAsString()](#cookbook_5)
- * [simple.real()](#cookbook_6)
- * [simple.realAsString()](#cookbook_7)
- * [simple.bool()](#cookbook_8)
- * [simple.null()](#cookbook_9)
- * [simple.validLocale()](#cookbook_10)
- * [simple.string()](#cookbook_11)
- * [simple.email()](#cookbook_12)
- * [simple.emptyString()](#cookbook_13)
- * [simple.number().greaterThan()](#cookbook_14)
- * [simple.number().lessThan()](#cookbook_15)
- * [simple.equal()](#cookbook_16)
- * [simple.notEqual()](#cookbook_17)
- * [simple.arrayAsString()](#cookbook_18)
- * [simple.url()](#cookbook_19)
- * [simple.base64()](#cookbook_20)
- * [simple.ipv4()](#cookbook_21)
- * [simple.ipv5()](#cookbook_22)
- * [simple.alphanumeric()](#cookbook_23)
- * [simple.regexMatch()](#cookbook_24)
- * [simple.jsonString()](#cookbook_25)
+ * [simple.number().value()](#cookbook-1)
+ * [simple.numberAsString().value()](#cookbook-2)
+ * [simple.integer().value()](#cookbook-3)
+ * [simple.integer() .min() .max()](#cookbook-4)
+ * [simple.integerAsString()](#cookbook-5)
+ * [simple.real()](#cookbook-6)
+ * [simple.realAsString()](#cookbook-7)
+ * [simple.bool()](#cookbook-8)
+ * [simple.null()](#cookbook-9)
+ * [simple.validLocale()](#cookbook-10)
+ * [simple.string()](#cookbook-11)
+ * [simple.email()](#cookbook-12)
+ * [simple.emptyString()](#cookbook-13)
+ * [simple.number().greaterThan()](#cookbook-14)
+ * [simple.number().lessThan()](#cookbook-15)
+ * [simple.equal()](#cookbook-16)
+ * [simple.notEqual()](#cookbook-17)
+ * [simple.arrayAsString()](#cookbook-18)
+ * [simple.url()](#cookbook-19)
+ * [simple.base64()](#cookbook-20)
+ * [simple.ipv4()](#cookbook-21)
+ * [simple.ipv5()](#cookbook-22)
+ * [simple.alphanumeric()](#cookbook-23)
+ * [simple.regexMatch()](#cookbook-24)
+ * [simple.jsonString()](#cookbook-25)
 
 **Please note:**
 ```
@@ -629,7 +629,7 @@ console.log( simple.new('Invalid Regex')
 console.log( 'expected: false' ); 
 console.log( '' );
 ```
-
+(#cookbook-25)
 ###### jsonString
 
 ```javascript
