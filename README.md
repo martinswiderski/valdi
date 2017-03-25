@@ -605,7 +605,8 @@ console.log( simple.new('Valid Alphanum')
 console.log( 'expected: true' ); 
 console.log( '' );
 console.log( simple.new('Valid Alphanum')
-                .string().alphanumeric('de').value('Gebhard-Leberecht von Blücher Fürst von Wahlstatt 0123456789') );
+                .string().alphanumeric('de')
+                .value('Gebhard-Leberecht von Blücher Fürst von Wahlstatt 0123456789') );
 console.log( 'expected: true' ); 
 console.log( '' );
 console.log( simple.new('Valid Alphanum')
