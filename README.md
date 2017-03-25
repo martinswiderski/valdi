@@ -13,11 +13,11 @@ ver. **0.0.373**
 
 In order to install please run in your project path:
 
-[![NPM](https://nodei.co/npm/valdi.png)](https://nodei.co/npm/valdi)
-
 ```bash
 npm install --save valdi
 ```
+
+[![NPM](https://nodei.co/npm/valdi.png)](https://nodei.co/npm/valdi)
 
 #### Simple assertions (multiple conditions with AND)
 
