@@ -629,7 +629,8 @@ console.log( simple.new('Invalid Regex')
 console.log( 'expected: false' ); 
 console.log( '' );
 ```
-(#cookbook-25)
+
+<a name="cookbook-25" />
 ###### jsonString
 
 ```javascript
