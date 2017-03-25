@@ -62,7 +62,7 @@ false
 
 #### <a name="examples"></a>Other examples
 
- * [whitelists and blacklists](#in-list)
+ * [Whitelists and blacklists](#in-list)
  * [Simple assertions](#simple)
  * [simple.number().value()](#cookbook-1)
  * [simple.numberAsString().value()](#cookbook-2)
