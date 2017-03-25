@@ -2,11 +2,9 @@ valdi
 ---
 Input validation with extendable valid patterns definitions - for ES6 version check [valdi-es6](https://github.com/martinswiderski/valdi-es6).
 
-<br><br>
-<p align="center">
+<p align="left">
   <img src="https://raw.githubusercontent.com/martinswiderski/valdi/master/valdi-logo-small.png" alt="valdi"/>
-</p>]
-
+</p>
 ### Current version
 ver. **0.0.373**
 
