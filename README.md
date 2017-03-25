@@ -249,10 +249,9 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
+###### Methods chain ...integerAsString()
 
 ```javascript
-console.log( '----  Methods chain ...integerAsString() ----' );
-
 console.log( simple.new('An integer as string').integerAsString().value(false) );
 console.log( 'expected: false' ); 
 console.log( '' );
@@ -261,10 +260,9 @@ console.log( 'expected: true' );
 console.log( '' );
 ```
 
+###### Methods chain ...real()
 
 ```javascript
-console.log( '----  Methods chain ...real() ----' );
-
 console.log( simple.new('A real number').real().value(false) );
 console.log( 'expected: false' ); 
 console.log( '' );
@@ -276,10 +274,9 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
+###### Methods chain ...realAsString()
 
 ```javascript
-console.log( '----  Methods chain ...realAsString() ----' );
-
 console.log( simple.new('A real number as string').realAsString().value(false) );
 console.log( 'expected: false' ); 
 console.log( '' );
@@ -288,10 +285,9 @@ console.log( 'expected: true' );
 console.log( '' );
 ```
 
+###### Methods chain ...bool()
 
 ```javascript
-console.log( '----  Methods chain ...bool() ----' );
-
 console.log( simple.new('A bool').bool().value(false) );
 console.log( 'expected: true' ); 
 console.log( '' );
@@ -306,10 +302,9 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
+###### Methods chain ..null()
 
 ```javascript
-console.log( '----  Methods chain ..null() ----' );
-
 console.log( simple.new('A null').null().value(null) );
 console.log( 'expected: true' ); 
 console.log( '' );
@@ -321,10 +316,9 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
+###### Methods chain ..validLocale()
 
 ```javascript
-console.log( '----  Methods chain ..validLocale() ----' );
-
 console.log( simple.new('A valid locale').validLocale().value(false) );
 console.log( 'expected: false' ); 
 console.log( '' );
@@ -346,9 +340,9 @@ console.log( '' );
 ```
 
 
-```javascript
-console.log( '----  Methods chain ..string() ----' );
+###### Methods chain ..string()
 
+```javascript
 console.log( simple.new('A string value').string().value('false') );
 console.log( 'expected: true' ); 
 console.log( '' );
@@ -364,9 +358,9 @@ console.log( '' );
 ```
 
 
-```javascript
-console.log( '----  Methods chain ...email() ----' );
+###### Methods chain ...email()
 
+```javascript
 console.log( simple.new('An email').string().value('martin.swiderski@gmail.com') );
 console.log( 'expected: true' ); 
 console.log( '' );
@@ -378,10 +372,9 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
+###### Methods chain ...emptyString()
 
 ```javascript
-console.log( '----  Methods chain ...emptyString() ----' );
-
 console.log( simple.new('An empty string').emptyString().value('martin.swiderski@gmail.com') );
 console.log( 'expected: false' ); 
 console.log( '' );
@@ -393,10 +386,9 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
+###### Methods chain ...number().greaterThan()
 
 ```javascript
-console.log( '----  Methods chain ...number().greaterThan() ----' );
-
 console.log( simple.new('A number greater than').number().greaterThan(100).value(false) );
 console.log( 'expected: false' ); 
 console.log( '' );
@@ -429,10 +421,9 @@ console.log( 'expected: true' );
 console.log( '' );
 ```
 
+###### Methods chain ....number().lessThan()
 
 ```javascript
-console.log( '----  Methods chain ....number().lessThan() ----' );
-
 console.log( simple.new('A number less than').number().lessThan(100).value(false) );
 console.log( 'expected: false' ); 
 console.log( '' );
@@ -459,10 +450,9 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
+###### Methods chain ...equal()
 
 ```javascript
-console.log( '----  Methods chain ...equal() ----' );
-
 console.log( simple.new('A number equal').number().equal(100).value(100) );
 console.log( 'expected: true' ); 
 console.log( '' );
@@ -475,9 +465,9 @@ console.log( '' );
 ```
 
 
-```javascript
-console.log( '----  Methods chain ...notEqual() ----' );
+###### Methods chain ...notEqual()
 
+```javascript
 console.log( simple.new('A number not equal').number().notEqual(123).value(100) );
 console.log( 'expected: true' ); 
 console.log( '' );
@@ -490,9 +480,9 @@ console.log( '' );
 ```
 
 
-```javascript
-console.log( '----  Methods chain ..arrayAsString() ----' );
+###### Methods chain ..arrayAsString()
 
+```javascript
 console.log( simple.new('Array as string').string().arrayAsString().value('["8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"]') );
 console.log( 'expected: true' ); 
 console.log( '' );
@@ -513,10 +503,9 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
+###### URL
 
 ```javascript
-console.log( '----  URL ----' );
-
 console.log( simple.new('Valid URL').string().url().value('http://cecpvmlx080.internal.scee.net:8055/') );
 console.log( 'expected: true' ); 
 console.log( '' );
@@ -525,10 +514,9 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
+###### base64
 
 ```javascript
-console.log( '----  base64 ----' );
-
 console.log( simple.new('Valid Base64').string().base64().value('aGVyZSB3ZSBjb21lIGFnYWlu') );
 console.log( 'expected: true' ); 
 console.log( '' );
@@ -537,10 +525,9 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
+###### ipv4
 
 ```javascript
-console.log( '----  ipv4 ----' );
-
 console.log( simple.new('Valid IPv4').string().ipv4().value('10.10.1.1') );
 console.log( 'expected: true' ); 
 console.log( '' );
@@ -549,10 +536,9 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
+###### ipv5
 
 ```javascript
-console.log( '----  ipv5 ----' );
-
 console.log( simple.new('Valid IPv6').string().ipv6().value('2001:4860:4860::8888') );
 console.log( 'expected: true' ); 
 console.log( '' );
@@ -561,10 +547,9 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
+###### alphanumeric
 
 ```javascript
-console.log( '----  alphanumeric ----' );
-
 console.log( simple.new('Valid Alphanum').string().alphanumeric('xx').value('2001:4860:4860::8888') );
 console.log( 'expected: false' ); 
 console.log( '' );
@@ -585,10 +570,9 @@ console.log( 'expected: true' );
 console.log( '' );
 ```
 
+###### regexMatch
 
 ```javascript
-console.log( '----  regexMatch ----' );
-
 console.log( simple.new('Valid Regex').string().regexMatch(/^\w+$/).value('0123456789') );
 console.log( 'expected: true' ); 
 console.log( '' );
@@ -597,10 +581,9 @@ console.log( 'expected: false' );
 console.log( '' );
 ```
 
+###### jsonString
 
 ```javascript
-console.log( '----  jsonString ----' );
-
 console.log( simple.new('Valid JSON').string().jsonString().value(JSON.stringify({this: 'is JSON'})) );
 console.log( 'expected: true' ); 
 console.log( '' );
@@ -608,4 +591,3 @@ console.log( simple.new('Invalid JSON').string().jsonString().value('GaHssDGHDGg
 console.log( 'expected: false' ); 
 console.log( '' );
 ```
-
