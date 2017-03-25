@@ -4,7 +4,7 @@ valdi
   <img src="https://raw.githubusercontent.com/martinswiderski/valdi/master/valdi-logo-small.png" alt="valdi"/>
 </p>
 
-Input validation with extendable valid patterns definitions - for ES6 version check [valdi-es6](https://github.com/martinswiderski/valdi-es6).
+Input validation with configured, custom 'valid' patterns definitions - for ES6 version check [valdi-es6](https://github.com/martinswiderski/valdi-es6).
 
 ### Current version
 ver. **0.0.373**
