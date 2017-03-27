@@ -21,7 +21,7 @@ function updateVersion(pck, read, ver, date, rebuild) {
             err.push('Readme file too short');
         } else {
             for (var l in readme) {
-                if (readme[l].indexOf('** | **')> -1)  readme[l] = '**' + ver + '** | **' + date + '** | `codebloke`';
+                if (readme[l].indexOf('** | **')> -1)  readme[l] = '**' + ver + '** | **' + date + '** | `codebloke` | [npm](https://www.npmjs.com/package/valdi)';
             }
             fs.writeFileSync(read, readme.join('\n'), 'utf8');
         }
