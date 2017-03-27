@@ -379,7 +379,7 @@ it('AND', function () {
 });
 
 var EmailOrEnum = simple.new().or().string().inList('N/A,,none,dunno').email(),
-    Wartime     = simple.new().or().inList('1914,1915,1916,1917,1918').inList('1939,1940,1941,1942,1943,1944,1945').email();
+    Wartime     = simple.new().or().inList('1914,1915,1916,1917,1918').inList('1939,1940,1941,1942,1943,1944,1945');
 
 describe('Examples OR', function () {
     it('OR', function () {
