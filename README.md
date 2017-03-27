@@ -24,8 +24,6 @@ npm install --save valdi
 [![NPM](https://nodei.co/npm/valdi.png)](https://nodei.co/npm/valdi)
 
 
-<div style="text-align:center;"><script type="text/javascript" src=""></script></div><a href="http://www.webestools.com/" style="display:block;text-align:center;" title="Tools services webmasters counters generators scripts tutorials free"><img src="http://www.webestools.com/images/ban03.gif" alt="Tools services webmasters counters generators scripts tutorials free" /></a>
-
 #### Simple assertions (multiple conditions with AND)
 
 ```javascript
