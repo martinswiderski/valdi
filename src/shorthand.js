@@ -96,6 +96,14 @@ function Shorthand() {
     };
 
 
+    this.and = function() {
+        return this.operator('AND');
+    };
+
+    this.or = function() {
+        return this.operator('OR');
+    };
+
     this.operator = function(op) {
         if (typeof op === 'string' && _ops[op.toLocaleLowerCase()] === true) {
             this._operator = op.toLocaleLowerCase();

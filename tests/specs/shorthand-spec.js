@@ -341,23 +341,26 @@ describe('Additional validators', function () {
     });
 });
 
-var ob = {
-    and: {
-        'AND': simple.new().operator('AND'),
-        'and': simple.new().operator('and'),
-        'aNd': simple.new().operator('aNd'),
-        'AnD': simple.new().operator('AnD'),
-    },
-    or: {
-        'OR': simple.new().operator('OR'),
-        'or': simple.new().operator('or'),
-        'oR': simple.new().operator('oR'),
-        'Or': simple.new().operator('Or'),
-    }
-};
+var ob = {};
 
 describe('Operators are case insensitive', function () {
-    it('AND', function () {
+
+    ob['and'] = {
+        'AND': simple.new().operator('AND'),
+            'and': simple.new().operator('and'),
+            'aNd': simple.new().operator('aNd'),
+            'AnD': simple.new().operator('AnD')
+    };
+    ob['or'] = {
+        'OR': simple.new().operator('OR'),
+            'or': simple.new().operator('or'),
+            'oR': simple.new().operator('oR'),
+            'Or': simple.new().operator('Or')
+    };
+    ob.or['orShort'] = simple.new().or();
+    ob.and['andShort'] = simple.new().and();
+
+it('AND', function () {
         expect(ob.and['AND']._operator).toBe('and');
         expect(ob.and['and']._operator).toBe('and');
         expect(ob.and['AnD']._operator).toBe('and');
@@ -368,5 +371,9 @@ describe('Operators are case insensitive', function () {
         expect(ob.or['or']._operator).toBe('or');
         expect(ob.or['Or']._operator).toBe('or');
         expect(ob.or['oR']._operator).toBe('or');
+    });
+    it('OR/AND have wrapper method', function () {
+        expect(ob.and['andShort']._operator).toBe('and');
+        expect(ob.or['orShort']._operator).toBe('or');
     });
 });
