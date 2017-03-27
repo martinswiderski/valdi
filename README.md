@@ -9,6 +9,8 @@ Input validation with configured, custom 'valid' patterns definitions - for ES6 
 ### Current version
 ver. **0.0.374**
 
+published: **date**
+
 [![MIT License](https://raw.githubusercontent.com/martinswiderski/valdi/master/mit-license.png)](LICENSE) [![Build Status](https://travis-ci.org/martinswiderski/valdi.svg?branch=master)](https://travis-ci.org/martinswiderski/valdi) [![npm version](https://badge.fury.io/js/valdi.svg)](https://www.npmjs.com/package/valdi)
 
 In order to install please run in your project path:
