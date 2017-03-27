@@ -79,7 +79,7 @@ console.log(War.value('ABC'));
 console.log(War.value(1944));
 console.log(War.value('Make peace not war'));
 ```
-will give you:
+outputs following:
 
 ```javascript
 false
@@ -705,7 +705,7 @@ console.log(War.value('ABC'));
 console.log(War.value(1944));
 console.log(War.value('Make peace not war'));
 ```
-will give you:
+this would give you:
 
 ```javascript
 false
