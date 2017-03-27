@@ -10,7 +10,7 @@ Input validation with configured, custom 'valid' patterns definitions - for ES6 
 
 Version|Published|By
 --- | --- | ---
-**0.0.374** | **date** | `martinswiderski`
+**0.0.373** | **date** | `codebloke`
 
 ver. 
 
