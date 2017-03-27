@@ -23,6 +23,9 @@ npm install --save valdi
 
 [![NPM](https://nodei.co/npm/valdi.png)](https://nodei.co/npm/valdi)
 
+
+![Counter](http://services.webestools.com/cpt_visitors/46847-1-8.js)
+
 #### Simple assertions (multiple conditions with AND)
 
 ```javascript
