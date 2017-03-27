@@ -377,3 +377,12 @@ it('AND', function () {
         expect(ob.or['orShort']._operator).toBe('or');
     });
 });
+
+describe('Examples OR', function () {
+    var EmailOrFibonacci = simple.new()
+        .string().email().
+        inList('"fibb-1","fibb-1","fibb-2","fibb-3","fibb-5","fibb-8","fibb-13","fibb-21","fibb-34","fibb-55","fibb-89","fibb-144","fibb-233","fibb-377"');
+    it('OR', function () {
+    });
+});
+
