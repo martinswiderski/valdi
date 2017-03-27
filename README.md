@@ -12,9 +12,6 @@ Version|Published|By
 --- | --- | ---
 **0.0.374** | **2017-03-27** | `codebloke`
 
-ver. 
-
-published: 
 
 [![MIT License](https://raw.githubusercontent.com/martinswiderski/valdi/master/mit-license.png)](LICENSE) [![Build Status](https://travis-ci.org/martinswiderski/valdi.svg?branch=master)](https://travis-ci.org/martinswiderski/valdi) [![npm version](https://badge.fury.io/js/valdi.svg)](https://www.npmjs.com/package/valdi)
 
@@ -97,6 +94,7 @@ true
 true
 false
 ```
+more [about this approach here](#cookbook-26).
 
 ### <a name="examples"></a>Other examples
 
