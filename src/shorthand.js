@@ -2,6 +2,7 @@
 var Config = require('./config'),
     instance = 0,
     _testCaseId = 0,
+    Inspect = require('./inspector'),
     InputValidator = require('./input-validator');
 
 function Shorthand() {
@@ -123,6 +124,22 @@ function Shorthand() {
         }
         return this;
     };
+
+    this.custom = function(operation, arg1, arg2, arg3) {
+
+        if (Inspect.name(operation) === 'function') {
+            var args = [], _args = [arg1, arg2, arg3];
+            for (var i in _args) {
+                if (typeof _args[i] !== 'undefined') {
+                    args.push(_args[i]);
+                }
+            }
+            _addtest('custom', operation, args);
+        }
+        return this;
+    };
+
+
 
     this.integer = function(ish) {
         if (typeof ish !== 'undefined') {

@@ -396,3 +396,16 @@ describe('Examples OR', function () {
     });
 });
 
+function validIsOnlyIntOne(value) {
+    return parseInt(value) === 1;
+}
+
+var validOne = Valdi.simple.new(),
+    validTwo = Valdi.simple.new();
+
+describe('You can add custom validators', function () {
+    it('Valid is only 1', function () {
+        expect(validOne.custom(validIsOnlyIntOne).value(1)).toBe(true);
+    });
+});
+
