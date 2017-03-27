@@ -4,7 +4,7 @@ var fs = require('fs'),
     rebuildVersion = process.argv[2] && process.argv[2] === '--update' ? true : false,
     config = require('./../config');
 
-function updateVersion(pck, read, ver, rebuild) {
+function updateVersion(pck, read, ver, date, rebuild) {
     var err = [];
     if (rebuild !== true) {
         return false;
@@ -21,7 +21,7 @@ function updateVersion(pck, read, ver, rebuild) {
             err.push('Readme file too short');
         } else {
             for (var l in readme) {
-                if (readme[l].indexOf('ver. **')> -1)  readme[l] = 'ver. **' + ver +'**';
+                if (readme[l].indexOf('** | **')> -1)  readme[l] = '**' + ver + '** | **' + date + '** | `codebloke`';
             }
             fs.writeFileSync(read, readme.join('\n'), 'utf8');
         }
@@ -33,6 +33,7 @@ updateVersion(
     __dirname + '/../../' + config.package,
     __dirname + '/../../' + config.readme,
     config.version,
+    config.published,
     rebuildVersion
 );
 
