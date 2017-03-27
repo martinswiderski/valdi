@@ -1,16 +1,16 @@
 valdi
 ---
-<p align="left">
-  <img src="https://raw.githubusercontent.com/martinswiderski/valdi/master/valdi-logo-small.png" alt="valdi"/>
-</p>
 
 Input validation with configured, custom 'valid' patterns definitions - for ES6 version check [valdi-es6](https://github.com/martinswiderski/valdi-es6).
 
 ### Current version
 
-Version|Published|By|URL
---- | --- | --- | ---
-**0.0.374** | **2017-03-27** | `codebloke` | [npm](https://www.npmjs.com/package/valdi)
+_|Version|Published|By|URL
+--- |--- | --- | --- | ---
+<p align="left">
+  <img src="https://raw.githubusercontent.com/martinswiderski/valdi/master/valdi-logo-small.png" alt="valdi"/>
+</p>
+ | **0.0.374** | **2017-03-27** | `codebloke` | [npm](https://www.npmjs.com/package/valdi)
 
 
 [![MIT License](https://raw.githubusercontent.com/martinswiderski/valdi/master/mit-license.png)](LICENSE) [![Build Status](https://travis-ci.org/martinswiderski/valdi.svg?branch=master)](https://travis-ci.org/martinswiderski/valdi) [![npm version](https://badge.fury.io/js/valdi.svg)](https://www.npmjs.com/package/valdi)
