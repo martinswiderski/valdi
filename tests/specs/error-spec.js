@@ -3,8 +3,7 @@ var path = require('path'),
     md5 = require('md5'),
     ValdiError = require('./../../src/error'),
     _err = false,
-    _details = [],
-    Valdi = require('./../../index');
+    _details = [];
 
 console.log('MD5: ' + md5(fs.readFileSync(__filename)) + ' File: ' + path.basename(__filename));
 

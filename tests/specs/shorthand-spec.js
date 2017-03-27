@@ -347,20 +347,20 @@ describe('Operators are case insensitive', function () {
 
     ob['and'] = {
         'AND': simple.new().operator('AND'),
-            'and': simple.new().operator('and'),
-            'aNd': simple.new().operator('aNd'),
-            'AnD': simple.new().operator('AnD')
+        'and': simple.new().operator('and'),
+        'aNd': simple.new().operator('aNd'),
+        'AnD': simple.new().operator('AnD')
     };
     ob['or'] = {
         'OR': simple.new().operator('OR'),
-            'or': simple.new().operator('or'),
-            'oR': simple.new().operator('oR'),
-            'Or': simple.new().operator('Or')
+        'or': simple.new().operator('or'),
+        'oR': simple.new().operator('oR'),
+        'Or': simple.new().operator('Or')
     };
     ob.or['orShort'] = simple.new().or();
     ob.and['andShort'] = simple.new().and();
 
-it('AND', function () {
+    it('AND', function () {
         expect(ob.and['AND']._operator).toBe('and');
         expect(ob.and['and']._operator).toBe('and');
         expect(ob.and['AnD']._operator).toBe('and');
