@@ -341,3 +341,58 @@ describe('Additional validators', function () {
     });
 });
 
+var ob = {};
+
+describe('Operators are case insensitive', function () {
+
+    ob['and'] = {
+        'AND': simple.new().operator('AND'),
+            'and': simple.new().operator('and'),
+            'aNd': simple.new().operator('aNd'),
+            'AnD': simple.new().operator('AnD')
+    };
+    ob['or'] = {
+        'OR': simple.new().operator('OR'),
+            'or': simple.new().operator('or'),
+            'oR': simple.new().operator('oR'),
+            'Or': simple.new().operator('Or')
+    };
+    ob.or['orShort'] = simple.new().or();
+    ob.and['andShort'] = simple.new().and();
+
+it('AND', function () {
+        expect(ob.and['AND']._operator).toBe('and');
+        expect(ob.and['and']._operator).toBe('and');
+        expect(ob.and['AnD']._operator).toBe('and');
+        expect(ob.and['aNd']._operator).toBe('and');
+    });
+    it('OR', function () {
+        expect(ob.or['OR']._operator).toBe('or');
+        expect(ob.or['or']._operator).toBe('or');
+        expect(ob.or['Or']._operator).toBe('or');
+        expect(ob.or['oR']._operator).toBe('or');
+    });
+    it('OR/AND have wrapper method', function () {
+        expect(ob.and['andShort']._operator).toBe('and');
+        expect(ob.or['orShort']._operator).toBe('or');
+    });
+});
+
+var EmailOrEnum = simple.new().or().string().inList('N/A,,none,dunno').email(),
+    Wartime     = simple.new().or().inList('1914,1915,1916,1917,1918').inList('1939,1940,1941,1942,1943,1944,1945');
+
+describe('Examples OR', function () {
+    it('OR', function () {
+        expect(EmailOrEnum.value('N/A')).toBe(true);
+        expect(EmailOrEnum.value('')).toBe(true);
+        expect(EmailOrEnum.value('none')).toBe(true);
+        expect(EmailOrEnum.value('dunno')).toBe(true);
+        expect(EmailOrEnum.value('valid@email.com')).toBe(true);
+    });
+    it('Wartime', function () {
+        expect(Wartime.value(1905)).toBe(false);
+        expect(Wartime.value(1943)).toBe(true);
+        expect(Wartime.value(1984)).toBe(false);
+    });
+});
+

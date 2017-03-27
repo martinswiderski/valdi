@@ -1,20 +1,25 @@
 'use strict';
 var Config = require('./config'),
     instance = 0,
+    _testCaseId = 0,
     InputValidator = require('./input-validator');
 
 function Shorthand() {
-    this.id     = -1;
-    this._value  = null;
-    this.desc   = null;
-    this.parent = null;
-    var _parent  = '',
+
+    this._operator = 'and';
+    this.id        = -1;
+    this._value    = null;
+    this.desc      = null;
+    this.parent    = null;
+
+    var _ops = {and: true, or: true},
+        _parent  = '',
         _value   = '',
         _descr   = '',
         _tests   = {},
         _results = {};
 
-    function _executeValidation(desc, id, parent) {
+    function _executeValidation(desc, id, parent, operator) {
 
         var i = 0, err = 0, tst = {};
         _results          = _resetResults(desc, id, parent);
@@ -37,7 +42,9 @@ function Shorthand() {
 
         _results.all    = i;
         _results.errors = err;
-        _results.status = (_results.all > 0 && _results.errors === 0) ? true : false;
+        _results.status = (operator === 'and')
+            ? (_results.all > 0 && _results.errors === 0) ? true : false
+            : (_results.all > 0 && _results.errors !== _results.all) ? true : false;
     }
 
     function _resetResults(desc, own_id, parent_id) {
@@ -57,7 +64,8 @@ function Shorthand() {
     }
 
     function _addtest(alias, test, args, desc) {
-        _tests[alias] = {
+        _tests[++_testCaseId] = {
+            alias: alias,
             assertion: test,
             args: args,
             object: desc
@@ -77,7 +85,8 @@ function Shorthand() {
         _executeValidation(
             this.desc,
             this.id,
-            this.parent
+            this.parent,
+            this._operator
         );
 
         //if (JSON.stringify(_results).indexOf(' trouble')>-1) {
@@ -86,6 +95,22 @@ function Shorthand() {
         //}
 
         return _results.status;
+    };
+
+
+    this.and = function() {
+        return this.operator('AND');
+    };
+
+    this.or = function() {
+        return this.operator('OR');
+    };
+
+    this.operator = function(op) {
+        if (typeof op === 'string' && _ops[op.toLocaleLowerCase()] === true) {
+            this._operator = op.toLocaleLowerCase();
+        }
+        return this;
     };
 
     // validators
