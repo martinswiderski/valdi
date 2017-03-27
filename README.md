@@ -73,7 +73,7 @@ false
  * [simple.number().value()](#cookbook-1)
  * [simple.numberAsString().value()](#cookbook-2)
  * [simple.integer().value()](#cookbook-3)
- * [simple.integer() .min() .max()](#cookbook-4)
+ * [simple.integer() .min() .max() - using AND](#cookbook-4)
  * [simple.integerAsString()](#cookbook-5)
  * [simple.real()](#cookbook-6)
  * [simple.realAsString()](#cookbook-7)
@@ -83,8 +83,8 @@ false
  * [simple.string()](#cookbook-11)
  * [simple.email()](#cookbook-12)
  * [simple.emptyString()](#cookbook-13)
- * [simple.number().greaterThan()](#cookbook-14)
- * [simple.number().lessThan()](#cookbook-15)
+ * [simple.number().greaterThan() - using AND](#cookbook-14)
+ * [simple.number().lessThan() - using AND](#cookbook-15)
  * [simple.equal()](#cookbook-16)
  * [simple.notEqual()](#cookbook-17)
  * [simple.arrayAsString()](#cookbook-18)
@@ -95,6 +95,7 @@ false
  * [simple.alphanumeric()](#cookbook-23)
  * [simple.regexMatch()](#cookbook-24)
  * [simple.jsonString()](#cookbook-25)
+ * [or() - Using OR](#cookbook-26)
 
 
 ### <a name="in-list"></a>Using whitelists and blacklists
@@ -666,4 +667,30 @@ console.log( '' );
 ```
 [&laquo; back to list](#examples)
 
+###### <a name="cookbook-26"></a>Using or() - more examples of OR
+
+```javascript
+var War = Valdi.simple.new()
+            .or().inList('1914,1915,1916,1917,1918')
+            .inList('1939,1940,1941,1942,1943,1944,1945');
+
+console.log(War.value(1905));
+console.log(War.value(1918));
+console.log(War.value('ABC'));
+console.log(War.value(1944));
+console.log(War.value('Make peace not war'));
+```
+will give you:
+
+```javascript
+false
+true
+true
+false
+true
+true
+false
+```
+
+[&laquo; back to list](#examples)
 
