@@ -66,7 +66,32 @@ true
 false
 ```
 
-#### <a name="examples"></a>Other examples
+#### Simpler approach to OR cases
+
+```javascript
+var War = Valdi.simple.new()
+            .or().inList('1914,1915,1916,1917,1918')
+            .inList('1939,1940,1941,1942,1943,1944,1945');
+
+console.log(War.value(1905));
+console.log(War.value(1918));
+console.log(War.value('ABC'));
+console.log(War.value(1944));
+console.log(War.value('Make peace not war'));
+```
+will give you:
+
+```javascript
+false
+true
+true
+false
+true
+true
+false
+```
+
+### <a name="examples"></a>Other examples
 
  * [Whitelists and blacklists](#in-list)
  * [Simple assertions](#simple)
