@@ -1,6 +1,7 @@
 'use strict';
 var Config = require('./config'),
     instance = 0,
+    _testCaseId = 0,
     InputValidator = require('./input-validator');
 
 function Shorthand() {
@@ -63,7 +64,8 @@ function Shorthand() {
     }
 
     function _addtest(alias, test, args, desc) {
-        _tests[alias] = {
+        _tests[++_testCaseId] = {
+            alias: alias,
             assertion: test,
             args: args,
             object: desc
