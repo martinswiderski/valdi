@@ -396,16 +396,28 @@ describe('Examples OR', function () {
     });
 });
 
-function validIsOnlyIntOne(value) {
+function _validIsOnlyIntOne(value) {
     return parseInt(value) === 1;
 }
 
+function Obx() {
+    this.prop = false;
+    this.method = function () {
+        return this._helper();
+    };
+    this._helper = function () {
+        return '_helper';
+    }
+}
+
 var validOne = Valdi.simple.new(),
-    validTwo = Valdi.simple.new();
+    validTwo = Valdi.simple.new(),
+    boo = new Obx();
 
 describe('You can add custom validators', function () {
     it('Valid is only 1', function () {
-        expect(validOne.custom(validIsOnlyIntOne).value(1)).toBe(true);
+        expect(validOne.custom(_validIsOnlyIntOne).value(1)).toBe(true);
+        expect(validOne.custom(boo.method).value(1)).toBe(true);
     });
 });
 

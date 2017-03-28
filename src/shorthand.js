@@ -127,6 +127,9 @@ function Shorthand() {
 
     this.custom = function(operation, arg1, arg2, arg3) {
 
+        console.log('Name');
+        console.log(Inspect.name(operation));
+
         if (Inspect.name(operation) === 'function') {
             var args = [], _args = [arg1, arg2, arg3];
             for (var i in _args) {
