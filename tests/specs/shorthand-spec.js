@@ -401,27 +401,23 @@ function _validIsOnlyIntOne(value) {
 }
 
 function Obx() {
-    this.prop = false;
-    this.isBoolean = function (val) {
-        return this._helper();
-    };
-    this._helper = function (val) {
-        // @todo: is not called
-        console.log(val);
-        console.log(val === true || val === false);
-        return 'one';
-        //return val === true || val === false;
+    function __helperOnly_Private_And_Stateless(input) {
+        return typeof input === 'boolean';
     }
-}
 
+    this.isBoolean = function (val) {
+        return __helperOnly_Private_And_Stateless(val);
+    };
+}
 var validOne = Valdi.simple.new(),
-    validTwo = Valdi.simple.new(),
-    boo = new Obx();
+    validTwo = Valdi.simple.new();
 
 describe('You can add custom validators', function () {
-    it('Valid is only 1', function () {
+    it('Custom validator is a plain function', function () {
         expect(validOne.custom(_validIsOnlyIntOne).value(1)).toBe(true);
-        expect(validOne.customObjectMethod(boo, 'isBoolean').value( { not: 'bool'} )).toBe(true);
+    });
+    it('Custom validator a method of an object, but must be written in specific style', function () {
+        expect(validTwo.custom((new Obx()).isBoolean).value(false)).toBe(true);
     });
 });
 

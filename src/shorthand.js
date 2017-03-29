@@ -3,7 +3,6 @@ var Config = require('./config'),
     instance = 0,
     _testCaseId = 0,
     Inspect = require('./inspector'),
-    ValdiError = require('./error'),
     InputValidator = require('./input-validator');
 
 function Shorthand() {
@@ -146,24 +145,6 @@ function Shorthand() {
             }
             // @todo: more meat here
             _addtest('custom', operation, args);
-        }
-        return this;
-    };
-
-    this.customObjectMethod = function(obj, method, arg1, arg2, arg3) {
-        if (typeof obj === 'object' && Inspect.name(method) === 'function') {
-            var args = [], _args = [arg1, arg2, arg3];
-            for (var i in _args) {
-                if (typeof _args[i] !== 'undefined') {
-                    args.push(_args[i]);
-                }
-            }
-            _registered[++_regId] = {
-                type: 'object',
-                instance: obj,
-                function: method
-            };
-            _addtest('customObjectMethod', _registered[_regId].instance[method], args);
         }
         return this;
     };
