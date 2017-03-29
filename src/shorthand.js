@@ -20,11 +20,6 @@ function Shorthand() {
         _tests   = {},
         _results = {};
 
-    var _regId = 0,
-        _registered = {
-
-        };
-
     function _executeValidation(desc, id, parent, operator) {
 
         var i = 0, err = 0, tst = {};
