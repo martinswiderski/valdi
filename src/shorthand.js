@@ -163,7 +163,7 @@ function Shorthand() {
                 instance: obj,
                 function: method
             };
-            _addtest('customObjectMethod', _registered[_regId].instance[_registered[_regId].function], args);
+            _addtest('customObjectMethod', _registered[_regId].instance[method], args);
         }
         return this;
     };

@@ -406,7 +406,10 @@ function Obx() {
         return this._helper();
     };
     this._helper = function (val) {
-        return val === true || val === false;
+        console.log(val);
+        console.log(val === true || val === false);
+        return 'one';
+        //return val === true || val === false;
     }
 }
 
@@ -417,7 +420,7 @@ var validOne = Valdi.simple.new(),
 describe('You can add custom validators', function () {
     it('Valid is only 1', function () {
         expect(validOne.custom(_validIsOnlyIntOne).value(1)).toBe(true);
-        expect(validOne.customObjectMethod(boo, boo.isBoolean).value(1)).toBe(true);
+        expect(validOne.customObjectMethod(boo, 'isBoolean').value( { not: 'bool'} )).toBe(true);
     });
 });
 
