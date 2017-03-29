@@ -406,6 +406,7 @@ function Obx() {
         return this._helper();
     };
     this._helper = function (val) {
+        // @todo: is not called
         console.log(val);
         console.log(val === true || val === false);
         return 'one';
