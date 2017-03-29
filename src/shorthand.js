@@ -2,6 +2,8 @@
 var Config = require('./config'),
     instance = 0,
     _testCaseId = 0,
+    Inspect = require('./inspector'),
+    ValdiError = require('./error'),
     InputValidator = require('./input-validator');
 
 function Shorthand() {
@@ -19,6 +21,11 @@ function Shorthand() {
         _tests   = {},
         _results = {};
 
+    var _regId = 0,
+        _registered = {
+
+        };
+
     function _executeValidation(desc, id, parent, operator) {
 
         var i = 0, err = 0, tst = {};
@@ -27,7 +34,12 @@ function Shorthand() {
 
         for (var alias in _tests) {
             i++;
+
             tst = _tests[alias];
+            if (typeof tst.assertion !== 'function') {
+                console.log(tst);
+            }
+
             if (tst.args.length === 0) {
                 _results.tests[alias] = tst.assertion(_value);
             } else if (tst.args.length === 1) {
@@ -120,6 +132,38 @@ function Shorthand() {
             _addtest('number', InputValidator.isNumber, [true]);
         } else {
             _addtest('number', InputValidator.isNumber, []);
+        }
+        return this;
+    };
+
+    this.custom = function(operation, arg1, arg2, arg3) {
+        if (Inspect.name(operation) === 'function') {
+            var args = [], _args = [arg1, arg2, arg3];
+            for (var i in _args) {
+                if (typeof _args[i] !== 'undefined') {
+                    args.push(_args[i]);
+                }
+            }
+            // @todo: more meat here
+            _addtest('custom', operation, args);
+        }
+        return this;
+    };
+
+    this.customObjectMethod = function(obj, method, arg1, arg2, arg3) {
+        if (typeof obj === 'object' && Inspect.name(method) === 'function') {
+            var args = [], _args = [arg1, arg2, arg3];
+            for (var i in _args) {
+                if (typeof _args[i] !== 'undefined') {
+                    args.push(_args[i]);
+                }
+            }
+            _registered[++_regId] = {
+                type: 'object',
+                instance: obj,
+                function: method
+            };
+            _addtest('customObjectMethod', _registered[_regId].instance[method], args);
         }
         return this;
     };
