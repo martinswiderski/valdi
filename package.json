@@ -11,7 +11,8 @@
     "alias-eslint": "alias eslint=./node_modules/.bin/eslint",
     "alias-all": "npm run alias-eslint; npm run alias-istanbul; npm run alias-jasmine-node",
     "github-release": "./github-release",
-    "test": "npm run alias-all; jasmine-node --junitreport tests/specs/; mv reports/*.xml reports/junit/; git checkout tests/props/*.*",
+    "test-sign-md5": "cd tests/specs/; ./sign-tests; cd ../../",
+    "test": "npm run test-sign-md5; npm run alias-all; jasmine-node --junitreport tests/specs/; mv reports/*.xml reports/junit/; git checkout tests/props/*.*",
     "check-eslint": "npm run alias-all; OUT='./reports/eslint/eslint.txt'; date > $OUT; eslint src/*.js >> $OUT; eslint ./index.js >> $OUT; eslint tests/specs/*.js >> $OUT; echo \"DONE!\"",
     "check-coverage": "rm -fr reports/coverage/; npm run alias-all; istanbul cover --include-all-sources -x \"**src/tools/**\" jasmine-node tests/specs/; rm -fr reports/coverage/; mv coverage reports/; git checkout tests/props/*.*",
     "tests": "npm test; npm run check-eslint; npm run check-coverage",
@@ -45,7 +46,6 @@
   "dependencies": {
     "csv-string": "^2.3.2",
     "date-time": "^1.1.0",
-    "fs": "0.0.1-security",
     "ip-address": "^5.8.6",
     "md5": "^2.2.1",
     "path": "^0.12.7",
