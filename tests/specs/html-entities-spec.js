@@ -1,10 +1,8 @@
-var path = require('path'),
-    fs = require('fs'),
-    md5 = require('md5'),
-    HtmlEntities = require('./../../src/html-entities'),
+var HtmlEntities = require('./../../src/html-entities'),
     Validator = require('./../../index');
 
-console.log('MD5: ' + md5(fs.readFileSync(__filename)) + ' File: ' + path.basename(__filename));
+var testDetails = require('./_details/html-entities-details.json');
+console.log('MD5: ' + testDetails.md5 + ' File: ' + testDetails.file);
 
 describe('HtmlEntities implements tool methods for decoding and encoding of the HTML Entities', function () {
     it('isValid', function () {

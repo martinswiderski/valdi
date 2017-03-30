@@ -1,10 +1,8 @@
-var path = require('path'),
-    fs = require('fs'),
-    md5 = require('md5'),
-    Config = require('./../../src/config'),
+var Config = require('./../../src/config'),
     Valdi = require('./../../index');
 
-console.log('MD5: ' + md5(fs.readFileSync(__filename)) + ' File: ' + path.basename(__filename));
+var testDetails = require('./_details/shorthand-details.json');
+console.log('MD5: ' + testDetails.md5 + ' File: ' + testDetails.file);
 
 describe('Valdi probvides access to Shorthand objects', function () {
     it('via full name', function () {

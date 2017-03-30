@@ -1,10 +1,8 @@
-var path = require('path'),
-    fs = require('fs'),
-    md5 = require('md5'),
-    InputValidator = require('./../../src/input-validator');
+var InputValidator = require('./../../src/input-validator');
 
 
-console.log('MD5: ' + md5(fs.readFileSync(__filename)) + ' File: ' + path.basename(__filename));
+var testDetails = require('./_details/input-validator-details.json');
+console.log('MD5: ' + testDetails.md5 + ' File: ' + testDetails.file);
 
 describe('Basic checks', function () {
 
@@ -193,10 +191,10 @@ describe('Basic checks', function () {
     });
 
     it('Method InputValidator._toArray', function () {
-        expect(md5(JSON.stringify(InputValidator._toArray('["8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"]', true))))
-            .toBe(md5('["8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"]'));
-        expect(md5(JSON.stringify(InputValidator._toArray('', false))))
-            .toBe(md5('[""]')); // empty returned
+        expect(JSON.stringify(InputValidator._toArray('["8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"]', true)))
+            .toBe('["8.8.8.8","2001:4860:4860::8888","2001:4860:4860::8844"]');
+        expect(JSON.stringify(InputValidator._toArray('', false)))
+            .toBe('[""]'); // empty returned
         expect(InputValidator._toArray('[]', true))
             .toBe(false); // false returned
     });

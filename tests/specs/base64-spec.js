@@ -1,10 +1,8 @@
-var path = require('path'),
-    fs = require('fs'),
-    md5 = require('md5'),
-    Base64 = require('./../../src/base64'),
+var Base64 = require('./../../src/base64'),
     Valdi = require('./../../index');
 
-console.log('MD5: ' + md5(fs.readFileSync(__filename)) + ' File: ' + path.basename(__filename));
+var testDetails = require('./_details/base64-details.json');
+console.log('MD5: ' + testDetails.md5 + ' File: ' + testDetails.file);
 
 describe('native Base64', function () {
     it('is', function () {

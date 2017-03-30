@@ -1,9 +1,7 @@
-var path = require('path'),
-    fs = require('fs'),
-    md5 = require('md5'),
-    Config = require('./../../src/config');
+var Config = require('./../../src/config');
 
-console.log('MD5: ' + md5(fs.readFileSync(__filename)) + ' File: ' + path.basename(__filename));
+var testDetails = require('./_details/config-details.json');
+console.log('MD5: ' + testDetails.md5 + ' File: ' + testDetails.file);
 
 describe('Config', function () {
     it('Structure', function () {

@@ -1,10 +1,8 @@
-var path = require('path'),
-    fs = require('fs'),
-    md5 = require('md5'),
-    Valdi = require('./../../index'),
+var Valdi = require('./../../index'),
     ValidatorExpression = require('./../../src/validator-expression');
 
-console.log('MD5: ' + md5(fs.readFileSync(__filename)) + ' File: ' + path.basename(__filename));
+var testDetails = require('./_details/validator-expression-details.json');
+console.log('MD5: ' + testDetails.md5 + ' File: ' + testDetails.file);
 
 var _config = require('./../../src/config'),
     _ver = _config.version;
