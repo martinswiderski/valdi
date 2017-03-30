@@ -1,7 +1,7 @@
 'use strict';
 var Config = require('./config'),
     Inspector = require('./inspector'),
-    shortid = require('shortid'),
+    shortid = 0,
     md5 = require('md5');
 
 function ValidatorExpression() {
@@ -94,7 +94,7 @@ function ValidatorExpression() {
     };
 
     this.init = function () {
-        this._id = md5(shortid.generate());
+        this._id = md5('ShortId-' + (++shortid));
         return this;
     };
 
