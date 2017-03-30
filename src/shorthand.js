@@ -132,13 +132,12 @@ function Shorthand() {
 
     this.custom = function(operation, arg1, arg2, arg3) {
         if (Inspect.name(operation) === 'function') {
-            var args = [], _args = [arg1, arg2, arg3];
-            for (var i in _args) {
-                if (typeof _args[i] !== 'undefined') {
-                    args.push(_args[i]);
+            var c = 0, args = [], _args = [arg1, arg2, arg3];
+            for (c in _args) {
+                if (typeof _args[c] !== 'undefined') {
+                    args.push(_args[c]);
                 }
             }
-            // @todo: more meat here
             _addtest('custom', operation, args);
         }
         return this;
