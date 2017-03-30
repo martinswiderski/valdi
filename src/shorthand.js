@@ -19,7 +19,8 @@ function Shorthand() {
         _value   = '',
         _descr   = '',
         _tests   = {},
-        _results = {};
+        _results = {},
+        _obId    = 0;
 
     function _executeValidation(desc, id, parent, operator) {
 
@@ -29,21 +30,25 @@ function Shorthand() {
 
         for (var alias in _tests) {
             i++;
-
             tst = _tests[alias];
-            if (typeof tst.assertion !== 'function') {
-                console.log(tst);
-            }
 
-            if (tst.args.length === 0) {
-                _results.tests[alias] = tst.assertion(_value);
-            } else if (tst.args.length === 1) {
-                _results.tests[alias] = tst.assertion(_value, tst.args[0]);
-            } else if (tst.args.length === 2) {
-                _results.tests[alias] = tst.assertion(_value, tst.args[0], tst.args[1]);
-            }
-            if (_results.tests[alias] === false) {
-                err++;
+            if (Inspect.name(this) === Inspect.name(tst.assertion)) {
+
+                console.log('Non function');
+                console.log(tst);
+
+            } else {
+
+                if (tst.args.length === 0) {
+                    _results.tests[alias] = tst.assertion(_value);
+                } else if (tst.args.length === 1) {
+                    _results.tests[alias] = tst.assertion(_value, tst.args[0]);
+                } else if (tst.args.length === 2) {
+                    _results.tests[alias] = tst.assertion(_value, tst.args[0], tst.args[1]);
+                }
+                if (_results.tests[alias] === false) {
+                    err++;
+                }
             }
         }
 
@@ -142,6 +147,20 @@ function Shorthand() {
             _addtest('custom', operation, args);
         } else {
             throw new ValdiError('Custom validator must be a function');
+        }
+        return this;
+    };
+
+    this.nested = function (obj) {
+        if (Inspect.name(obj) === Inspect.name(this)) {
+            ++_obId;
+            _addtest(
+                'nested-' + _obId,
+                obj,
+                []
+            );
+        } else {
+            throw new ValdiError('Nested validator must be an instance of Shorthand');
         }
         return this;
     };
