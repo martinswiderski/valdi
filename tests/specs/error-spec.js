@@ -7,19 +7,19 @@ var path = require('path'),
 
 console.log('MD5: ' + md5(fs.readFileSync(__filename)) + ' File: ' + path.basename(__filename));
 
+_details = [
+    'This is details Array',
+    'which I can populate',
+    'with important error details'
+];
+
+try {
+    throw new ValdiError('I can throw it', _details);
+} catch (err) {
+    _err = err;
+}
+
 describe('Has custom error class', function () {
-
-    _details = [
-        'This is details Array',
-        'which I can populate',
-        'with important error details'
-    ];
-
-    try {
-        throw new ValdiError('I can throw it', _details);
-    } catch (err) {
-        _err = err;
-    }
 
     it('Which is throwable', function () {
         expect(typeof _err !== 'boolean').toBe(true);
@@ -32,6 +32,11 @@ describe('Has custom error class', function () {
         expect(typeof _err.details).toBe('object');
         expect(_err.details.length).toBe(3);
         expect(JSON.stringify(_err.details)).toBe(JSON.stringify(_details));
+    });
+
+    it('Can turn itself imto JSON string', function () {
+        expect(typeof _err.toString()).toBe('string');
+        expect((JSON.parse(_err.toString())).message).toBe('I can throw it');
     });
 });
 
