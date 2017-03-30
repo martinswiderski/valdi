@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+SCRIPT=$(readlink -f $0)
+SCRIPTPATH=`dirname $SCRIPT`
 for i in *spec.js
 do
     FILE=$i
@@ -7,7 +9,7 @@ do
     JSON="${BASENAME/spec.js/details.json}"
     MD5=`echo $MD5SUM | cut -d ' ' -f 1`
     #echo "{ \"md5\": \"$MD5\", \"file\": \"$BASENAME\" }"
-    echo "{ \"md5\": \"$MD5\", \"file\": \"$BASENAME\" }" > ./_details/$JSON
+    echo "{ \"md5\": \"$MD5\", \"file\": \"$BASENAME\" }" > $SCRIPTPATH/_details/$JSON
     echo "Processing and signing... $i ($MD5)"
 done
 exit 0
