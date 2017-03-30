@@ -2,6 +2,7 @@
 var Config = require('./config'),
     instance = 0,
     _testCaseId = 0,
+    ValdiError = require('./error'),
     Inspect = require('./inspector'),
     InputValidator = require('./input-validator');
 
@@ -139,6 +140,8 @@ function Shorthand() {
                 }
             }
             _addtest('custom', operation, args);
+        } else {
+            throw new ValdiError('Custom validator must be a function');
         }
         return this;
     };

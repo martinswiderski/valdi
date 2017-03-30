@@ -1,4 +1,5 @@
 var Config = require('./../../src/config'),
+    Inspect = require('./../../src/inspector'),
     Valdi = require('./../../index');
 
 var testDetails = require('./_details/shorthand-details.json');
@@ -407,15 +408,32 @@ function Obx() {
         return __helperOnly_Private_And_Stateless(val);
     };
 }
-var validOne = Valdi.simple.new(),
-    validTwo = Valdi.simple.new();
+var validatorOne   = Valdi.simple.new(),
+    validatorTwo   = Valdi.simple.new(),
+    validatorThree = Valdi.simple.new();
 
 describe('You can add custom validators', function () {
     it('Custom validator is a plain function', function () {
-        expect(validOne.custom(_validIsOnlyIntOne).value(1)).toBe(true);
+        expect(validatorOne.custom(_validIsOnlyIntOne).value(1)).toBe(true);
     });
     it('Custom validator a method of an object, but must be written in specific style', function () {
-        expect(validTwo.custom((new Obx()).isBoolean).value(false)).toBe(true);
+        expect(validatorTwo.custom((new Obx()).isBoolean).value(false)).toBe(true);
     });
 });
+
+try {
+    validatorThree.custom('This is not a function');
+    it('and it is ValdiError', function () {
+        expect(Inspect.type(fx)).toBe('object'); // triggers error
+    });
+} catch (fx) {
+    describe('Throws error if passed with a non function', function () {
+        it('and it is ValdiError', function () {
+            expect(Inspect.type(fx)).toBe('object');
+            expect(Inspect.name(fx)).toBe('ValdiError');
+            expect(fx.message).toBe('Custom validator must be a function');
+        });
+    });
+}
+
 
