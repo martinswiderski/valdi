@@ -32,10 +32,23 @@ function Shorthand() {
             i++;
             tst = _tests[alias];
 
-            if (Inspect.name(this) === Inspect.name(tst.assertion)) {
+            if (!tst.assertion) {
 
-                console.log('Non function');
-                console.log(tst);
+                throw new ValdiError(
+                    'Assertion not specified'
+                );
+
+            } else if (tst.assertion && Inspect.name(tst.assertion) !== 'function') {
+
+                if (Inspect.name(tst.assertion) === 'Shorthand') {
+
+                    _results.tests[alias] = tst.assertion.value(_value);
+
+                } else {
+                    throw new ValdiError(
+                        'Invalid assertion object: ' + Inspect.name(tst.assertion)
+                    );
+                }
 
             } else {
 
@@ -101,9 +114,9 @@ function Shorthand() {
             this._operator
         );
 
-        //if (JSON.stringify(_results).indexOf(' trouble')>-1) {
-        //    _results._tests = _tests;
-        //    console.log(JSON.stringify(_results, null, 2));
+        //if (JSON.stringify(_results).indexOf('Shorthand')>-1) {
+            _results._tests = _tests;
+            console.log(JSON.stringify(_results, null, 2));
         //}
 
         return _results.status;
