@@ -116,7 +116,8 @@ function Shorthand() {
 
         //if (JSON.stringify(_results).indexOf('Shorthand')>-1) {
             _results._tests = _tests;
-            console.log(JSON.stringify(_results, null, 2));
+            console.log('-------------------------------------------');
+            console.log(JSON.stringify({ id: this.id, op: this._operator, desc: this.desc, tests: _tests, results: _results }, null, 2));
         //}
 
         return _results.status;
