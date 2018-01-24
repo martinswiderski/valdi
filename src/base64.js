@@ -7,7 +7,7 @@ function Base64() {
     this._keyMap = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
 
     this.isValid = function(string) {
-        return (typeof string === 'string') ? Validator.isBase64(string) : false;
+        return (typeof string === 'string') ? Validator.isBase64(string) : false; // the false one does not seem to be covered by UTs
     };
 
     this.encode = function(input) {
@@ -31,7 +31,7 @@ function Base64() {
             if (isNaN(chr2)) {
                 enc3 = enc4 = 64;
             } else if (isNaN(chr3)) {
-                enc4 = 64;
+                enc4 = 64; // not covered by UTs
             }
 
             output = output +
@@ -84,8 +84,8 @@ function Base64() {
                 utftext += String.fromCharCode(c);
             }
             else if((c > 127) && (c < 2048)) {
-                utftext += String.fromCharCode((c >> 6) | 192);
-                utftext += String.fromCharCode((c & 63) | 128);
+                utftext += String.fromCharCode((c >> 6) | 192);  // this and following
+                utftext += String.fromCharCode((c & 63) | 128);  // line are not covered by UT
             }
             else {
                 utftext += String.fromCharCode((c >> 12) | 224);
@@ -109,7 +109,7 @@ function Base64() {
                 string += String.fromCharCode(c);
                 i++;
             }
-            else if((c > 191) && (c < 224)) {
+            else if((c > 191) && (c < 224)) { // the whole block does not seem to be covered by UTs
                 c2 = utftext.charCodeAt(i+1);
                 string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
                 i += 2;
