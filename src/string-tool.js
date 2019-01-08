@@ -22,7 +22,7 @@ function StringTool () {
     };
 
     this.lcase = function(input) {
-        return this.cast(input).toLocaleLowerCase();
+        return ''; //this.cast(input).toLocaleLowerCase();
     };
 
     this.trim = function(input) {
